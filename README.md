@@ -20,7 +20,7 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 История проекта
 ---------------
 
-Подробный список изменений в файле CHANGELOG.md.
+Подробный список изменений в файле [CHANGELOG.md](../master/CHANGELOG.md).
 
 Контакты
 --------
