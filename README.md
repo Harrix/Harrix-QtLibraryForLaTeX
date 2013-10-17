@@ -7,7 +7,7 @@ HarrixQtLibraryForLaTeX
 
 https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
-Библиотека распространяется по лицензии Apache License, Version 2.0.
+Библиотека распространяется по лицензии [Apache License, Version 2.0](../master/LICENSE.txt).
 
 Функции для получения LaTeX кода 
 --------------------------------
