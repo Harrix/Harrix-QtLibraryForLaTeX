@@ -56,9 +56,6 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
         template <class T> QString THQt_LatexShowNumber (T VMHL_X);
 
-Пример использования функция вывода в LaTeX файл
-------------------------------------------------
-
 Скриншоты применения функций
 ----------------------------
 
