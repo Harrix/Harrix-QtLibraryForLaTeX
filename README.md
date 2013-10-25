@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.0
+Версия 1.1
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -55,6 +55,47 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 - Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
 
         template <class T> QString THQt_LatexShowNumber (T VMHL_X);
+		
+- Функция выводит число VMHL_X в строку Latex, причем число выделено жирным.
+
+        template <class T> QString THQt_LatexNumberToText (T VMHL_X);		
+		
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+		
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
+
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
+
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);
+
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);
+		
+- Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);
+
+- Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);
+
+- Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);
+
 
 Скриншоты применения функций
 ----------------------------
