@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.1
+Версия 1.2
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -95,6 +95,26 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 - Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
 
         template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);
+		
+- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+
+        template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine, bool ForNormalSize);
+
+- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+
+        template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
+
+- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine.
+
+        template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints);
+
+- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+
+        template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label);
+
+- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
+
+        template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);
 
 
 Скриншоты применения функций
