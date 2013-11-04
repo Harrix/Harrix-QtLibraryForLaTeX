@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.4
+---
+ * Добавлены функции для рисования двух графика THQt_LatexShowTwoIndependentChartsOfLine в разных вариациях. 
+
 1.3
 ---
  * Добавлены функции для рисования двух графика THQt_LatexShowTwoChartsOfLine в разных вариациях. 
