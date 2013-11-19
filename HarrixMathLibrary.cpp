@@ -1,12 +1,8 @@
 //HarrixMathLibrary
-//Версия 3.27
+//Версия 3.29
 //Сборник различных математических функций и шаблонов с открытым кодом на языке C++.
 //https://github.com/Harrix/HarrixMathLibrary
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
-
-#include <stdlib.h>
-#include <time.h>
-#include <math.h>
 
 #include "HarrixMathLibrary.h"
 #include "mtrand.h"//генеhатор случайных чисел Mersenne Twister
@@ -45,7 +41,7 @@ void MHL_SeedRandom(void)
 //В качестве начального значения для ГСЧ используем текущее время
 MHL_Dummy=(unsigned)time(NULL);
 srand(MHL_Dummy);//Стандартная инициализация
-//rand();//первый вызов для контроля
+rand();//первый вызов для контроля
 
 //MersenneTwisterRandomNumberGenerator
 //Инициализатор генератора случайных чисел Mersenne Twister
