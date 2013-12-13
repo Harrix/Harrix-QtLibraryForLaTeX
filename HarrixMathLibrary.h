@@ -30,7 +30,7 @@ double MHL_RandomNumber(void);//Генерирует вещественное с
 void MHL_SetRandomNumberGenerator(TypeOfRandomNumberGenerator T);//Переназначить генератор случайных чисел на другой
 
 //ПЕРЕМЕННЫЕ ПЕРЕЧИСЛЯЕМОГО ТИПА
-enum TypeOfTestFunction { TestFunction_Ackley, TestFunction_ParaboloidOfRevolution, TestFunction_Rastrigin, TestFunction_Rosenbrock, TestFunction_SumVector };
+enum TypeOfTestFunction { TestFunction_Ackley, TestFunction_AckleyII, TestFunction_ParaboloidOfRevolution, TestFunction_Rastrigin, TestFunction_Rosenbrock, TestFunction_SumVector };
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ОБЪЯВЛЕНИЯ ФУНКЦИЙ
@@ -98,7 +98,9 @@ int MHL_TournamentSelection(double *Fitness, int SizeTournament, int *Taken, int
 int MHL_TournamentSelectionWithReturn(double *Fitness, int SizeTournament, int VMHL_N);
 template <class T> void TMHL_MutationBinaryMatrix(T **VMHL_ResultMatrix, double ProbabilityOfMutation, int VMHL_N,int VMHL_M);
 template <class T> void TMHL_SinglepointCrossover(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N);
+template <class T> void TMHL_SinglepointCrossoverWithCopying(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N);
 template <class T> void TMHL_TwopointCrossover(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N);
+template <class T> void TMHL_TwopointCrossoverWithCopying(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N);
 template <class T> void TMHL_UniformCrossover(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N);
 
 //Геометрия
@@ -280,8 +282,10 @@ void MHL_UniformSearchOptimization (double Left, double Right, double (*Function
 void MHL_UniformSearchOptimizationN (double Left, double Right, double (*Function)(double), int Count, double *VMHL_Result_X,double *VMHL_Result_Y);
 
 //Оптимизация - свалка алгоритмов
+int MHL_BinaryGeneticAlgorithmWCC(int *Parameters, double (*FitnessFunction)(int*,int), int *VMHL_ResultVector, double *VMHL_Result);
 int MHL_BinaryGeneticAlgorithmWDPOfNOfGPS(double *Parameters, double (*FitnessFunction)(int*,int), int *VMHL_ResultVector, double *VMHL_Result);
 int MHL_BinaryGeneticAlgorithmWDTS(double *Parameters, double (*FitnessFunction)(int*,int), int *VMHL_ResultVector, double *VMHL_Result);
+int MHL_RealGeneticAlgorithmWCC(int *Parameters, int *NumberOfParts, double *Left, double *Right, double (*FitnessFunction)(double*,int), double *VMHL_ResultVector, double *VMHL_Result);
 int MHL_RealGeneticAlgorithmWDPOfNOfGPS(double *Parameters, int *NumberOfParts, double *Left, double *Right, double (*FitnessFunction)(double*,int), double *VMHL_ResultVector, double *VMHL_Result);
 int MHL_RealGeneticAlgorithmWDTS(double *Parameters, int *NumberOfParts, double *Left, double *Right, double (*FitnessFunction)(double*,int), double *VMHL_ResultVector, double *VMHL_Result);
 
@@ -345,6 +349,7 @@ template <class T> T TMHL_Variance(T *x, int VMHL_N);
 
 //Тестовые функции для оптимизации
 double MHL_TestFunction_Ackley(double *x, int VMHL_N);
+double MHL_TestFunction_AckleyII(double *x, int VMHL_N);
 double MHL_TestFunction_ParaboloidOfRevolution(double *x, int VMHL_N);
 double MHL_TestFunction_Rastrigin(double *x, int VMHL_N);
 double MHL_TestFunction_Rosenbrock(double *x, int VMHL_N);
@@ -1075,6 +1080,35 @@ else
  }
 }
 //---------------------------------------------------------------------------
+template <class T> void TMHL_SinglepointCrossoverWithCopying(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N)
+{
+/*
+Одноточечное скрещивание с возможностью полного копирования одного из родителей. Оператор генетического алгоритма. Отличается от стандартного одноточечного скрещивания тем, что точки разрыва могут происходить по краям родителей, что может привести к полному копированию родителя.
+Входные параметры:
+ Parent1 - первый родитель;
+ Parent2 - второй родитель;
+ VMHL_ResultVector - потомок;
+ VMHL_N - размер векторов Parent1, Parent2 и VMHL_ResultVector.
+Возвращаемое значение:
+ Отсутствует.
+Примечание:
+ Потомок выбирается случайно.
+*/
+int i;
+int k=MHL_RandomUniformInt(0,2);//0 или 1
+int point=MHL_RandomUniformInt(0,VMHL_N+1);//точка разрыва хромосомы
+if (k==0)//какой потомок "выживет": первый вариант или второй
+ {
+ for (i=0;i<point;i++) VMHL_ResultVector[i]=Parent1[i];//копируем гены из 1 родителя
+ for (i=point;i<VMHL_N;i++) VMHL_ResultVector[i]=Parent2[i];//копируем гены из 2 родителя
+ }
+else
+ {
+ for (i=0;i<point;i++) VMHL_ResultVector[i]=Parent2[i];//копируем гены из 2 родителя
+ for (i=point;i<VMHL_N;i++) VMHL_ResultVector[i]=Parent1[i];//копируем гены из 1 родителя
+ }
+}
+//---------------------------------------------------------------------------
 template <class T> void TMHL_TwopointCrossover(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N)
 {
 /*
@@ -1094,6 +1128,42 @@ int k=MHL_RandomUniformInt(0,2);//0 или 1
 //проводим скрещивание
 int point1=MHL_RandomUniformInt(1,VMHL_N);//1 точка разрыва хромосомы
 int point2=MHL_RandomUniformInt(1,VMHL_N);//2 точка разрыва хромосомы
+//1-ая точка разрыва должна следовать за 2-ой. Поэтому, если это не так,
+//то переставляем точки местами функцией TMHL_NumberInterchangeInt
+if (point2<point1) TMHL_NumberInterchange(&point1,&point2);
+if (k==0)//какой потомок "выживет": первый вариант или второй (зависит от порядка следования родителей)
+ {
+ for (i=0;i<point1;i++) VMHL_ResultVector[i]=Parent1[i];//копируем гены из 1 родителя
+ for (i=point1;i<point2;i++) VMHL_ResultVector[i]=Parent2[i];//копируем гены из 2 родителя
+ for (i=point2;i<VMHL_N;i++) VMHL_ResultVector[i]=Parent1[i];//копируем гены из 1 родителя
+ }
+else
+ {
+ for (i=0;i<point1;i++) VMHL_ResultVector[i]=Parent2[i];//копируем гены из 2 родителя
+ for (i=point1;i<point2;i++) VMHL_ResultVector[i]=Parent1[i];//копируем гены из 1 родителя
+ for (i=point2;i<VMHL_N;i++) VMHL_ResultVector[i]=Parent2[i];//копируем гены из 2 родителя
+ }
+}
+//---------------------------------------------------------------------------
+template <class T> void TMHL_TwopointCrossoverWithCopying(T *Parent1, T *Parent2, T *VMHL_ResultVector, int VMHL_N)
+{
+/*
+Двухточечное скрещивание с возможностью полного копирования одного из родителей. Оператор генетического алгоритма. Отличается от стандартного двухточечного скрещивания тем, что точки разрыва могут происходить по краям родителей, что может привести к полному копированию родителя.
+Входные параметры:
+ Parent1 - первый родитель;
+ Parent2 - второй родитель;
+ VMHL_ResultVector - потомок;
+ VMHL_N - размер векторов Parent1, Parent2 и VMHL_ResultVector.
+Возвращаемое значение:
+ Отсутствует.
+Примечание:
+ Потомок выбирается случайно.
+*/
+int i;
+int k=MHL_RandomUniformInt(0,2);//0 или 1
+//проводим скрещивание
+int point1=MHL_RandomUniformInt(0,VMHL_N+1);//1 точка разрыва хромосомы
+int point2=MHL_RandomUniformInt(0,VMHL_N+1);//2 точка разрыва хромосомы
 //1-ая точка разрыва должна следовать за 2-ой. Поэтому, если это не так,
 //то переставляем точки местами функцией TMHL_NumberInterchangeInt
 if (point2<point1) TMHL_NumberInterchange(&point1,&point2);
