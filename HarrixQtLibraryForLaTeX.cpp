@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.4
+//Версия 1.5
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -34,7 +34,7 @@ QString HQt_LatexEnd()
 QString HQt_LatexShowText (QString TitleX)
 {
     /*
-    Функция возвращает строку с выводом некоторой строки с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой строки с Latex кодами.
     Входные параметры:
      TitleX - непосредственно выводимая строка.
     Возвращаемое значение:
@@ -51,7 +51,7 @@ QString HQt_LatexShowText (QString TitleX)
 QString HQt_LatexShowSimpleText (QString String)
 {
     /*
-    Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишевства. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишества.
     Входные параметры:
      String - непосредственно выводимая строка.
     Возвращаемое значение:
@@ -68,11 +68,11 @@ QString HQt_LatexShowSimpleText (QString String)
 QString HQt_LatexShowHr ()
 {
     /*
-    Функция возвращает строку с выводом горизонтальной линии. Для добавление в Latex файл.
+    Функция возвращает строку с выводом горизонтальной линии.
     Входные параметры:
      Отсутствуют.
     Возвращаемое значение:
-     Строка с Latex кодами с тэгом горизонтмальной линии.
+     Строка с Latex кодами с тэгом горизонтальной линии.
     */
     QString VMHL_Result;
 
@@ -85,7 +85,7 @@ QString HQt_LatexShowHr ()
 QString HQt_LatexShowSection (QString String)
 {
     /*
-    Функция возвращает строку с выводом некоторой строки в виде заголовка. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой строки в виде заголовка.
     Входные параметры:
      String - непосредственно выводимая строка.
     Возвращаемое значение:
@@ -102,7 +102,7 @@ QString HQt_LatexShowSection (QString String)
 QString HQt_LatexShowSubsection (QString String)
 {
     /*
-    Функция возвращает строку с выводом некоторой строки в виде подзаголовка. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
     Входные параметры:
      String - непосредственно выводимая строка.
     Возвращаемое значение:
@@ -119,7 +119,7 @@ QString HQt_LatexShowSubsection (QString String)
 QString HQt_LatexShowAlert (QString String)
 {
     /*
-    Функция возвращает строку с выводом некоторого предупреждения. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого предупреждения.
     Входные параметры:
      String - непосредственно выводимая строка.
     Возвращаемое значение:
@@ -128,6 +128,115 @@ QString HQt_LatexShowAlert (QString String)
     QString VMHL_Result;
 
     VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexBeginCompositionFigure ()
+{
+    /*
+    Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
+    Входные параметры:
+     Отстуствтует.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\n\\begin{figure}\n\\centering\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label)
+{
+    /*
+    Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+    Входные параметры:
+     TitleFigure - заголовок рисунка;
+     Label - label для рисунка.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\n\\caption{"+TitleFigure+"}\\label{"+Label+"}\\end{figure}\n\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexEndCompositionFigure (QString TitleFigure)
+{
+    /*
+    Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+    Входные параметры:
+     TitleFigure - заголовок рисунка.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString Label="CompositionFigure"+HQt_RandomString(5);
+
+    QString VMHL_Result;
+
+    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexEndCompositionFigure ()
+{
+    /*
+    Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+    Входные параметры:
+     Отсутствуют.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString Label="CompositionFigure"+HQt_RandomString(5);
+
+    QString TitleFigure="Система";
+
+    QString VMHL_Result;
+
+    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexBeginFigureInCompositionFigure ()
+{
+    /*
+    Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+    Входные параметры:
+     Отстуствтует.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\\begin{subfigure}[t]{0.48\\textwidth}\n\\centering\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexEndFigureInCompositionFigure ()
+{
+    /*
+    Функция возвращает строку с Latex кодом после добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+    Входные параметры:
+     Отстуствтует.
+    Возвращаемое значение:
+     Строка с Latex кодами.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\n\\end{subfigure}\n";
 
     return VMHL_Result;
 }

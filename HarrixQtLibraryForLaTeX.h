@@ -10,42 +10,50 @@
 QString HQt_LatexBegin();//Возвращает начало для полноценного Latex файла.
 QString HQt_LatexEnd();//Возвращает концовку для полноценного Latex файла.
 
-QString HQt_LatexShowText (QString TitleX);//Функция возвращает строку с выводом некоторой строки с Latex кодами. Для добавление в Latex файл.
-QString HQt_LatexShowSimpleText (QString String);//Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишевства. Для добавление в Latex файл.
-QString HQt_LatexShowHr ();//Функция возвращает строку с выводом горизонтальной линии. Для добавление в Latex файл.
-QString HQt_LatexShowSection (QString String);//Функция возвращает строку с выводом некоторой строки в виде заголовка. Для добавление в Latex файл.
-QString HQt_LatexShowSubsection (QString String);//Функция возвращает строку с выводом некоторой строки в виде подзаголовка. Для добавление в Latex файл.
-QString HQt_LatexShowAlert (QString String);//Функция возвращает строку с выводом некоторого предупреждения. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowNumber (T VMHL_X);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
+QString HQt_LatexShowText (QString TitleX);//Функция возвращает строку с выводом некоторой строки с Latex кодами.
+QString HQt_LatexShowSimpleText (QString String);//Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишества.
+QString HQt_LatexShowHr ();//Функция возвращает строку с выводом горизонтальной линии.
+QString HQt_LatexShowSection (QString String);//Функция возвращает строку с выводом некоторой строки в виде заголовка.
+QString HQt_LatexShowSubsection (QString String);//Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
+QString HQt_LatexShowAlert (QString String);//Функция возвращает строку с выводом некоторого предупреждения.
+template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+template <class T> QString THQt_LatexShowNumber (T VMHL_X);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
 template <class T> QString THQt_LatexNumberToText (T VMHL_X);//Функция выводит число VMHL_X в строку Latex, причем число выделено жирным.
-template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некотоого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+
+QString HQt_LatexBeginCompositionFigure ();//Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
+QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label);//Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+QString HQt_LatexEndCompositionFigure (QString TitleFigure);//Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+QString HQt_LatexEndCompositionFigure ();//Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+QString HQt_LatexBeginFigureInCompositionFigure ();//Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+QString HQt_LatexEndFigureInCompositionFigure ();//Функция возвращает строку с Latex кодом после добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
 
 //ГРАФИКИ
 
-template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine, bool ForNormalSize);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
-template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine.
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine, bool ForNormalSize);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine.
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
-template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл.
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // РЕАЛИЗАЦИЯ ШАБЛОНОВ
@@ -53,7 +61,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
     Входные параметры:
      VMHL_X - выводимое число;
      TitleX - заголовок выводимого числа;
@@ -74,7 +82,7 @@ template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QStri
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
     Входные параметры:
      VMHL_X - выводимое число;
      NameX - обозначение числа.
@@ -94,7 +102,7 @@ template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX)
 template <class T> QString THQt_LatexShowNumber (T VMHL_X)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
     Входные параметры:
      VMHL_X - выводимое число.
     Возвращаемое значение:
@@ -128,7 +136,7 @@ template <class T> QString THQt_LatexNumberToText (T VMHL_X)
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора;
@@ -161,7 +169,7 @@ template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QSt
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора;
@@ -192,7 +200,7 @@ template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QSt
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора.
@@ -222,7 +230,7 @@ template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N)
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некотоого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора;
@@ -257,7 +265,7 @@ template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QS
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некотоого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора;
@@ -290,7 +298,7 @@ template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QS
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N)
 {
     /*
-    Функция возвращает строку с выводом некотоого вектора VMHL_Vector в траснпонированном виде с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
     Входные параметры:
      VMHL_Vector - указатель на выводимый вектор;
      VMHL_N - количество элементов вектора.
@@ -322,7 +330,7 @@ template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N)
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
     Входные параметры:
      VMHL_Matrix - указатель на выводимую матрицу;
      VMHL_N - количество строк в матрице;
@@ -367,7 +375,7 @@ template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
     Входные параметры:
      VMHL_Matrix - указатель на выводимую матрицу;
      VMHL_N - количество строк в матрице;
@@ -410,7 +418,7 @@ template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
     Входные параметры:
      VMHL_Matrix - указатель на выводимую матрицу;
      VMHL_N - количество строк в матрице;
@@ -448,17 +456,18 @@ template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine, bool ForNormalSize)
 {
     /*
-    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY - указатель на вектор координат Y точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine - название первого графика (для легенды);
      Label - label для графика
      ShowLine - показывать ли линию;
@@ -466,14 +475,14 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
      ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки;
      RedLine - рисовать ли красную линию, или синюю;
-     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
+     ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
     QString VMHL_Result;//переменная итогового результата
     int i,j;
 
-    //посчитаем гарницы изменения параметров
+    //посчитаем границы изменения параметров
     T MinX=VMHL_VectorX[0];
     for (int i=1;i<VMHL_N;i++)
         if (VMHL_VectorX[i]<MinX)
@@ -503,8 +512,8 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     T RightXBoundingBox=MaxX+LengthX/15.;
     T RightYBoundingBox=MaxY+LengthY/15.;
 
-    if (MinX==MaxX) { LeftXBoundingBox-=1; LengthX=2; RightXBoundingBox+=1;VMHL_Result+="!!!!!!\n";}
-    if (MinY==MaxY) { LeftYBoundingBox-=1; LengthY=2; RightYBoundingBox+=1;VMHL_Result+="!!!++!!!\n";}
+    if (MinX==MaxX) { LeftXBoundingBox-=1; LengthX=2; RightXBoundingBox+=1;VMHL_Result+="\n";}
+    if (MinY==MaxY) { LeftYBoundingBox-=1; LengthY=2; RightYBoundingBox+=1;VMHL_Result+="\n";}
 
     QString SLeftXBoundingBox=QString::number(LeftXBoundingBox);
     QString SLeftYBoundingBox=QString::number(LeftYBoundingBox);
@@ -515,19 +524,42 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     SRightXBoundingBox.replace(',', '.');
     SRightYBoundingBox.replace(',', '.');
 
-    VMHL_Result+="% Вывод графика\n";
+    if (ForNormalSize)
+        VMHL_Result+="% Вывод графика\n";
+    else
+        VMHL_Result+="% Вывод подграфика\n";
+
+    //Если график маленький, то дополнительные настройки:
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
+    }
+
 
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
-    if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
+    if (ForNormalSize)
+        VMHL_Result+="\\begin{tikzpicture}\n";
+    else
+        VMHL_Result+="\\begin{tikzpicture}[scale=1.0, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
     VMHL_Result+="xlabel={"+NameVectorX+"},\n";
     VMHL_Result+="ylabel={"+NameVectorY+"},\n";
-    if (ForNormalSize) VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
-    if (ForNormalSize) VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
-    VMHL_Result+="height=10cm,\n";
+    //if (ForNormalSize)
+        VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
+    //if (ForNormalSize)
+        VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
+    if (ForNormalSize)
+    {
+    VMHL_Result+="height=11cm,\n";
     VMHL_Result+="width=17cm,\n";
+    }
+    else
+    {
+        VMHL_Result+="height=6.0cm,\n";
+        VMHL_Result+="width=8.5cm,\n";
+    }
     VMHL_Result+="]\n\n";
 
     //копируем во временный массив наши массивы, чтобы их не потревожить
@@ -568,11 +600,14 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 
     if ((ShowPoints)&&(ShowLine))
     {
+        QString MarkSize;
+        if (VMHL_N>100) MarkSize=",mark size=1.5pt";
+
         //Нарисуем график
         if (RedLine==false)
-            VMHL_Result+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},very thick] coordinates {\n";
+            VMHL_Result+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",very thick] coordinates {\n";
         else
-            VMHL_Result+="\\addplot[color=red, mark=*,mark options={red,opacity = 1, fill=white,very thin},very thin] coordinates {\n";
+            VMHL_Result+="\\addplot[color=red, mark=*,mark options={red,opacity = 1, fill=white,very thin}"+MarkSize+",very thin] coordinates {\n";
         VMHL_Result+=SData;
         VMHL_Result+="};\n";
         VMHL_Result+="\\addlegendentry{"+NameLine+"};\n\n";
@@ -580,11 +615,14 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 
     if ((ShowPoints)&&(!ShowLine))
     {
+        QString MarkSize;
+        if (VMHL_N>100) MarkSize=",mark size=1.5pt";
+
         //Нарисуем график
         if (RedLine==false)
-            VMHL_Result+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},only marks] coordinates {\n";
+            VMHL_Result+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",only marks] coordinates {\n";
         else
-            VMHL_Result+="\\addplot[color=red, mark=*,mark options={red,opacity = 1, fill=white,very thin},only marks] coordinates {\n";
+            VMHL_Result+="\\addplot[color=red, mark=*,mark options={red,opacity = 1, fill=white,very thin}"+MarkSize+",only marks] coordinates {\n";
         VMHL_Result+=SData;
         VMHL_Result+="};\n";
         VMHL_Result+="\\addlegendentry{"+NameLine+"};\n\n";
@@ -657,6 +695,12 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 
     VMHL_Result+="\\end{axis}\n";
     VMHL_Result+="\\end{tikzpicture}\n";
+
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="}\n";
+    }
+
     if (!TitleChart.isEmpty())
     {
         if (!Label.isEmpty())
@@ -679,18 +723,19 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine)
 {
     /*
-    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
     По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY - указатель на вектор координат Y точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine - название первого графика (для легенды);
      Label - label для графика
      ShowLine - показывать ли линию;
@@ -708,18 +753,19 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints)
 {
     /*
-    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
     По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY - указатель на вектор координат Y точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine - название первого графика (для легенды);
      Label - label для графика
      ShowLine - показывать ли линию;
@@ -737,18 +783,19 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label)
 {
     /*
-    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
     По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY - указатель на вектор координат Y точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine - название первого графика (для легенды);
      Label - label для графика.
     Возвращаемое значение:
@@ -761,10 +808,11 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N)
 {
     /*
-    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
     По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
@@ -775,7 +823,7 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowChartOfLine (VMHL_VectorX, VMHL_VectorY, VMHL_N, "", "x", "y", "Линия", "", true, true, true, true, false, true);
+    VMHL_Result = THQt_LatexShowChartOfLine (VMHL_VectorX, VMHL_VectorY, VMHL_N, "", "x", "y", "Линия", "Chart"+HQt_RandomString(8), true, true, true, true, false, true);
 
     return VMHL_Result;
 }
@@ -784,7 +832,7 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами.
     У обоих графиков одинаковый массив значений X.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
@@ -792,14 +840,14 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика;
      ShowLine - показывать ли линию;
      ShowPoints - показывать ли точки;
-     ShowArea - показывать ли закрашенную ошбласть под кривой;
+     ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки;
      ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
     Возвращаемое значение:
@@ -808,7 +856,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     QString VMHL_Result;//переменная итогового результата
     int i,j;
 
-    //посчитаем гарницы изменения параметров
+    //посчитаем границы изменения параметров
     T MinX=VMHL_VectorX[0];
     for (int i=1;i<VMHL_N;i++)
         if (VMHL_VectorX[i]<MinX)
@@ -1067,24 +1115,25 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY1 - указатель на вектор координат Y точек первой линии;
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика;
      ShowLine - показывать ли линию;
      ShowPoints - показывать ли точки;
-     ShowArea - показывать ли закрашенную ошбласть под кривой;
+     ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
@@ -1096,18 +1145,19 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY1 - указатель на вектор координат Y точек первой линии;
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика.
@@ -1121,18 +1171,19 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. Для добавление в Latex файл. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
+    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
     Входные параметры:
      VMHL_VectorX - указатель на вектор координат X точек;
      VMHL_VectorY1 - указатель на вектор координат Y точек первой линии;
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика.
@@ -1141,7 +1192,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, "", "x", "y", "График 1", "График 2", "", true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true);
 
     return VMHL_Result;
 }
@@ -1150,7 +1201,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл.
+    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами.
     У обоих графиков разные массивы значений X и Y.
     Входные параметры:
      VMHL_VectorX1 - указатель на вектор координат X точек первой линии;
@@ -1160,14 +1211,14 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N2 - количество точек второй линии;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика;
      ShowLine - показывать ли линию;
      ShowPoints - показывать ли точки;
-     ShowArea - показывать ли закрашенную ошбласть под кривой;
+     ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки;
      ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
     Возвращаемое значение:
@@ -1176,7 +1227,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     QString VMHL_Result;//переменная итогового результата
     int i,j;
 
-    //посчитаем гарницы изменения параметров
+    //посчитаем границы изменения параметров
     T MinX1=VMHL_VectorX1[0];
     for (int i=1;i<VMHL_N1;i++)
         if (VMHL_VectorX1[i]<MinX1)
@@ -1472,10 +1523,11 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
     У обоих графиков разные массивы значений X и Y.
     Входные параметры:
      VMHL_VectorX1 - указатель на вектор координат X точек первой линии;
@@ -1485,14 +1537,14 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N2 - количество точек второй линии;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика;
      ShowLine - показывать ли линию;
      ShowPoints - показывать ли точки;
-     ShowArea - показывать ли закрашенную ошбласть под кривой;
+     ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
@@ -1504,10 +1556,11 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
+    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
     У обоих графиков разные массивы значений X и Y.
     Входные параметры:
      VMHL_VectorX1 - указатель на вектор координат X точек первой линии;
@@ -1517,8 +1570,8 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
      VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
      VMHL_N2 - количество точек второй линии;
      TitleChart - заголовок графика;
-     NameVectorX - название оси Ox;
-     NameVectorY - название оси Oy;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      NameLine1 - название первого графика (для легенды);
      NameLine2 - название второго графика (для легенды);
      Label - label для графика.
@@ -1532,10 +1585,11 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2)
 {
     /*
-    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Для добавление в Latex файл. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
+    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
     У обоих графиков разные массивы значений X и Y.
     Входные параметры:
      VMHL_VectorX1 - указатель на вектор координат X точек первой линии;
@@ -1549,7 +1603,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "", true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true);
 
     return VMHL_Result;
 }
