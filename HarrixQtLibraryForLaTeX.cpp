@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.5
+//Версия 1.6
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -141,10 +141,19 @@ QString HQt_LatexBeginCompositionFigure ()
      Отстуствтует.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString VMHL_Result;
 
-    VMHL_Result="\n\\begin{figure}\n\\centering\n";
+    VMHL_Result="\n\\begin{figure}[H]\n\\centering\n";
 
     return VMHL_Result;
 }
@@ -159,6 +168,15 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label)
      Label - label для рисунка.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString VMHL_Result;
 
@@ -176,6 +194,15 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure)
      TitleFigure - заголовок рисунка.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString Label="CompositionFigure"+HQt_RandomString(5);
 
@@ -195,6 +222,15 @@ QString HQt_LatexEndCompositionFigure ()
      Отсутствуют.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString Label="CompositionFigure"+HQt_RandomString(5);
 
@@ -216,6 +252,15 @@ QString HQt_LatexBeginFigureInCompositionFigure ()
      Отстуствтует.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString VMHL_Result;
 
@@ -233,6 +278,15 @@ QString HQt_LatexEndFigureInCompositionFigure ()
      Отстуствтует.
     Возвращаемое значение:
      Строка с Latex кодами.
+    Пример использования:
+    Latex += HQt_LatexBeginCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexBeginFigureInCompositionFigure ();
+    Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+    Latex += HQt_LatexEndFigureInCompositionFigure ();
+    Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
     QString VMHL_Result;
 

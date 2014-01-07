@@ -45,13 +45,15 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);//Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами.
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр GrayStyle.
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и GrayStyle.
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
 template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N);//Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами.
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр GrayStyle.
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и GrayStyle.
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные.
 template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2);//Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр ForNormalSize и RedLine и все остальные булевские переменные, а также все переменные названий.
 
@@ -535,7 +537,6 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
         VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
-
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
@@ -547,17 +548,17 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
     VMHL_Result+="xlabel={"+NameVectorX+"},\n";
     VMHL_Result+="ylabel={"+NameVectorY+"},\n";
     //if (ForNormalSize)
-        VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
+    VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
-        VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
+    VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
     if (ForNormalSize)
     {
-    VMHL_Result+="height=11cm,\n";
-    VMHL_Result+="width=17cm,\n";
+        VMHL_Result+="height=10cm,\n";
+        VMHL_Result+="width=17cm,\n";
     }
     else
     {
-        VMHL_Result+="height=6.0cm,\n";
+        VMHL_Result+="height=5.8cm,\n";
         VMHL_Result+="width=8.5cm,\n";
     }
     VMHL_Result+="]\n\n";
@@ -829,7 +830,7 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 }
 //---------------------------------------------------------------------------
 
-template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle)
 {
     /*
     Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами.
@@ -849,7 +850,8 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
      ShowPoints - показывать ли точки;
      ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки;
-     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
+     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается;
+     GrayStyle - второй график рисовать серым, а не красным.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
@@ -921,7 +923,16 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     SRightXBoundingBox.replace(',', '.');
     SRightYBoundingBox.replace(',', '.');
 
-    VMHL_Result+="% Вывод графика\n";
+    if (ForNormalSize)
+        VMHL_Result+="% Вывод графика\n";
+    else
+        VMHL_Result+="% Вывод подграфика\n";
+
+    //Если график маленький, то дополнительные настройки:
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
+    }
 
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
@@ -930,10 +941,20 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     VMHL_Result+="\\begin{axis} [\n";
     VMHL_Result+="xlabel={"+NameVectorX+"},\n";
     VMHL_Result+="ylabel={"+NameVectorY+"},\n";
-    if (ForNormalSize) VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
-    if (ForNormalSize) VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
-    VMHL_Result+="height=10cm,\n";
-    VMHL_Result+="width=17cm,\n";
+    //if (ForNormalSize)
+    VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
+    //if (ForNormalSize)
+    VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
+    if (ForNormalSize)
+    {
+        VMHL_Result+="height=10cm,\n";
+        VMHL_Result+="width=17cm,\n";
+    }
+    else
+    {
+        VMHL_Result+="height=5.8cm,\n";
+        VMHL_Result+="width=8.5cm,\n";
+    }
     VMHL_Result+="]\n\n";
 
     //копируем во временный массив наши массивы, чтобы их не потревожить
@@ -971,6 +992,9 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 
     QString Plot1,Plot2;
 
+    QString PlotSecond="plotsecond";
+    if (GrayStyle) PlotSecond="plotsecondgray";
+
     if (ShowArea)
     {
         //нарисуем закрашенную область
@@ -981,7 +1005,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
         Plot1+="};\n\n";
 
         //нарисуем закрашенную область
-        Plot2+="\\addplot[color=plotsecond, draw=none,fill, fill opacity = 0.4,forget plot] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", draw=none,fill, fill opacity = 0.4,forget plot] coordinates {\n";
         Plot2+=" ("+QString::number(MinX)+", "+QString::number(MinY)+") \n";
         Plot2+=SData2;
         Plot2+=" ("+QString::number(MaxX)+", "+QString::number(MinY)+") \n";
@@ -990,14 +1014,17 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 
     if ((ShowPoints)&&(ShowLine))
     {
+        QString MarkSize;
+        if (VMHL_N>100) MarkSize=",mark size=1.5pt";
+
         //Нарисуем график
-        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},very thick] coordinates {\n";
+        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",very thick] coordinates {\n";
         Plot1+=SData1;
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
         //Нарисуем график
-        Plot2+="\\addplot[color=plotsecond, mark=square*,mark options={plotsecond,opacity = 1, fill=white,fill opacity = 1, thin,solid},very thick,dashed] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",very thick,dashed] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1005,14 +1032,17 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 
     if ((ShowPoints)&&(!ShowLine))
     {
+        QString MarkSize;
+        if (VMHL_N>100) MarkSize=",mark size=1.5pt";
+
         //Нарисуем график
-        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},only marks] coordinates {\n";
+        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",only marks] coordinates {\n";
         Plot1+=SData1;
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
         //Нарисуем график
-        Plot2+="\\addplot[color=plotsecond, mark=square*,mark options={plotsecond,opacity = 1, fill=white,fill opacity = 1, thin,solid},only marks] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", mark=square*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1025,7 +1055,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
-        Plot2+="\\addplot[color=plotsecond, no markers,very thick] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", no markers,very thick] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1092,6 +1122,12 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 
     VMHL_Result+="\\end{axis}\n";
     VMHL_Result+="\\end{tikzpicture}\n";
+
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="}\n";
+    }
+
     if (!TitleChart.isEmpty())
     {
         if (!Label.isEmpty())
@@ -1111,6 +1147,37 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     delete [] Temp_VMHL_VectorX;
     delete [] Temp_VMHL_VectorY1;
     delete [] Temp_VMHL_VectorY2;
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
+{
+    /*
+    Функция возвращает строку с выводом некоторого двух графиков по точкам с Latex кодами. У обоих графиков одинаковый массив значений X. По сравнению с основной функцией тут отсутствует параметр GrayStyle.
+    Входные параметры:
+     VMHL_VectorX - указатель на вектор координат X точек;
+     VMHL_VectorY1 - указатель на вектор координат Y точек первой линии;
+     VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
+     VMHL_N - количество точек;
+     TitleChart - заголовок графика;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+     NameLine1 - название первого графика (для легенды);
+     NameLine2 - название второго графика (для легенды);
+     Label - label для графика;
+     ShowLine - показывать ли линию;
+     ShowPoints - показывать ли точки;
+     ShowArea - показывать ли закрашенную область под кривой;
+     ShowSpecPoints - показывать ли специальные точки;
+     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
+    Возвращаемое значение:
+     Строка с Latex кодами с выводимым графиком.
+    */
+    QString VMHL_Result;//переменная итогового результата
+
+    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints, ForNormalSize, false);
 
     return VMHL_Result;
 }
@@ -1140,7 +1207,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints,true);
+    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints,true,false);
 
     return VMHL_Result;
 }
@@ -1166,7 +1233,7 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, true, true, true, true,true,false);
 
     return VMHL_Result;
 }
@@ -1192,13 +1259,13 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoChartsOfLine (VMHL_VectorX,VMHL_VectorY1,VMHL_VectorY2, VMHL_N, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true,false);
 
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
 
-template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle)
 {
     /*
     Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами.
@@ -1220,7 +1287,8 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
      ShowPoints - показывать ли точки;
      ShowArea - показывать ли закрашенную область под кривой;
      ShowSpecPoints - показывать ли специальные точки;
-     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
+     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается;
+     GrayStyle - второй график рисовать серым, а не красным.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
@@ -1315,7 +1383,16 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     SRightXBoundingBox.replace(',', '.');
     SRightYBoundingBox.replace(',', '.');
 
-    VMHL_Result+="% Вывод графика\n";
+    if (ForNormalSize)
+        VMHL_Result+="% Вывод графика\n";
+    else
+        VMHL_Result+="% Вывод подграфика\n";
+
+    //Если график маленький, то дополнительные настройки:
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
+    }
 
 
     //рисуем область графика и оси
@@ -1325,10 +1402,20 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     VMHL_Result+="\\begin{axis} [\n";
     VMHL_Result+="xlabel={"+NameVectorX+"},\n";
     VMHL_Result+="ylabel={"+NameVectorY+"},\n";
-    if (ForNormalSize) VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
-    if (ForNormalSize) VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
-    VMHL_Result+="height=10cm,\n";
-    VMHL_Result+="width=17cm,\n";
+    //if (ForNormalSize)
+    VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
+    //if (ForNormalSize)
+    VMHL_Result+="ymax="+SRightYBoundingBox+",\n";
+    if (ForNormalSize)
+    {
+        VMHL_Result+="height=10cm,\n";
+        VMHL_Result+="width=17cm,\n";
+    }
+    else
+    {
+        VMHL_Result+="height=5.8cm,\n";
+        VMHL_Result+="width=8.5cm,\n";
+    }
     VMHL_Result+="]\n\n";
 
     //копируем во временный массив наши массивы, чтобы их не потревожить
@@ -1378,6 +1465,12 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
 
     QString Plot1,Plot2;
 
+    QString PlotSecond="plotsecond";
+    if (GrayStyle) PlotSecond="plotsecondgray";
+
+    QString MarkSize;
+    if ((VMHL_N1>100)||(VMHL_N2>100)) MarkSize=",mark size=1.5pt";
+
     if (ShowArea)
     {
         //нарисуем закрашенную область
@@ -1388,7 +1481,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
         Plot1+="};\n\n";
 
         //нарисуем закрашенную область
-        Plot2+="\\addplot[color=plotsecond, draw=none,fill, fill opacity = 0.4,forget plot] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", draw=none,fill, fill opacity = 0.4,forget plot] coordinates {\n";
         Plot2+=" ("+QString::number(MinX2)+", "+QString::number(MinY)+") \n";
         Plot2+=SData2;
         Plot2+=" ("+QString::number(MaxX2)+", "+QString::number(MinY)+") \n";
@@ -1398,13 +1491,13 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     if ((ShowPoints)&&(ShowLine))
     {
         //Нарисуем график
-        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},very thick] coordinates {\n";
+        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",very thick] coordinates {\n";
         Plot1+=SData1;
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
         //Нарисуем график
-        Plot2+="\\addplot[color=plotsecond, mark=square*,mark options={plotsecond,opacity = 1, fill=white,fill opacity = 1, thin,solid},very thick,dashed] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",very thick,dashed] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1413,13 +1506,13 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     if ((ShowPoints)&&(!ShowLine))
     {
         //Нарисуем график
-        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick},only marks] coordinates {\n";
+        Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",only marks] coordinates {\n";
         Plot1+=SData1;
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
         //Нарисуем график
-        Plot2+="\\addplot[color=plotsecond, mark=square*,mark options={plotsecond,opacity = 1, fill=white,fill opacity = 1, thin,solid},only marks] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", mark=square*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1432,7 +1525,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
         Plot1+="};\n";
         Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
 
-        Plot2+="\\addplot[color=plotsecond, no markers,very thick] coordinates {\n";
+        Plot2+="\\addplot[color="+PlotSecond+", no markers,very thick] coordinates {\n";
         Plot2+=SData2;
         Plot2+="};\n";
         Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
@@ -1499,6 +1592,12 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
 
     VMHL_Result+="\\end{axis}\n";
     VMHL_Result+="\\end{tikzpicture}\n";
+
+    if (!ForNormalSize)
+    {
+        VMHL_Result+="}\n";
+    }
+
     if (!TitleChart.isEmpty())
     {
         if (!Label.isEmpty())
@@ -1519,6 +1618,40 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     delete [] Temp_VMHL_VectorX2;
     delete [] Temp_VMHL_VectorY1;
     delete [] Temp_VMHL_VectorY2;
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize)
+{
+    /*
+    Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. По сравнению с основной функцией тут отсутствует параметр GrayStyle.
+    У обоих графиков разные массивы значений X и Y.
+    Входные параметры:
+     VMHL_VectorX1 - указатель на вектор координат X точек первой линии;
+     VMHL_VectorY1 - указатель на вектор координат Y точек первой линии;
+     VMHL_N1 - количество точек первой линии;
+     VMHL_VectorX2 - указатель на вектор координат X точек второй линии;
+     VMHL_VectorY2 - указатель на вектор координат Y точек второй линии;
+     VMHL_N2 - количество точек второй линии;
+     TitleChart - заголовок графика;
+     NameVectorX - название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+     NameLine1 - название первого графика (для легенды);
+     NameLine2 - название второго графика (для легенды);
+     Label - label для графика;
+     ShowLine - показывать ли линию;
+     ShowPoints - показывать ли точки;
+     ShowArea - показывать ли закрашенную область под кривой;
+     ShowSpecPoints - показывать ли специальные точки;
+     ForNormalSize - нормальный размер графика (на всю ширину) или для маленького размера график создается.
+    Возвращаемое значение:
+     Строка с Latex кодами с выводимым графиком.
+    */
+    QString VMHL_Result;//переменная итогового результата
+
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints, ForNormalSize, false);
 
     return VMHL_Result;
 }
@@ -1551,7 +1684,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints, true);
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, ShowLine, ShowPoints, ShowArea, ShowSpecPoints, true, false);
 
     return VMHL_Result;
 }
@@ -1580,7 +1713,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, TitleChart, NameVectorX, NameVectorY, NameLine1, NameLine2, Label, true, true, true, true,true, false);
 
     return VMHL_Result;
 }
@@ -1603,7 +1736,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
     */
     QString VMHL_Result;//переменная итогового результата
 
-    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true);
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true, false);
 
     return VMHL_Result;
 }
