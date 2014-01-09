@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.9
+---
+ * Добавлены функции семейства THQt_LatexShowTwoIndependentChartsOfPointsAndLine.
+
 1.8
 ---
  * Дополнен функционал некоторых функций.
