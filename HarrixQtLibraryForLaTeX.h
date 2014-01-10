@@ -94,6 +94,8 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);//Отличается от основной функцией отсутствием булевских параметров в конце - все по умолчанию делается.
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));//Отличается от основной функцией отсутствием булевских параметров в конце и названий осей и графиков - для быстрого отображения графика без лишних телодвижений.
 
+QString HQt_ReadHdataToLatexChart (QString filename);//Функция возвращает строку с Latex кодом графика в результате считывания информации из *.hdata версии Harrix Data 1.0.
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // РЕАЛИЗАЦИЯ ШАБЛОНОВ
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -574,16 +576,42 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
         VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
+
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
-    if (ForNormalSize)
-        VMHL_Result+="\\begin{tikzpicture}\n";
-    else
-        VMHL_Result+="\\begin{tikzpicture}[scale=1.0, baseline]\n";
+    if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -703,6 +731,12 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -982,13 +1016,42 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
         VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
+
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
     if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -1148,6 +1211,12 @@ template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMH
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -1461,14 +1530,42 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
         VMHL_Result+="{\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
 
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
     if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -1637,6 +1734,12 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_Vec
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -1880,20 +1983,20 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
         {
             Color[1]="CCCCCC";
         }
-        if (VMHL_M-1==3)//если три графика и показаны закрашенные области
+        if (VMHL_M-1==3)//если три графика
         {
             Color[0]="799BAC";
             Color[1]="97BBCD";
             Color[2]="CCCCCC";
         }
-        if (VMHL_M-1==4)//если 4 графика и показаны закрашенные области
+        if (VMHL_M-1==4)//если 4 графика
         {
             Color[0]="799BAC";
             Color[1]="83A6B7";
             Color[2]="97BBCD";
             Color[3]="CCCCCC";
         }
-        if (VMHL_M-1==5)//если 5 графика и показаны закрашенные области
+        if (VMHL_M-1==5)//если 5 графика
         {
             Color[0]="799BAC";
             Color[1]="83A6B7";
@@ -1901,7 +2004,7 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             Color[3]="ADC2CD";
             Color[4]="CCCCCC";
         }
-        if (VMHL_M-1==6)//если 6 графика и показаны закрашенные области
+        if (VMHL_M-1==6)//если 6 графика
         {
             Color[0]="799BAC";
             Color[1]="83A6B7";
@@ -1910,7 +2013,7 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             Color[4]="BEC7CD";
             Color[5]="CCCCCC";
         }
-        if (VMHL_M-1==7)//если 7 графика и показаны закрашенные области
+        if (VMHL_M-1==7)//если 7 графика
         {
             Color[0]="6A8795";
             Color[1]="799BAC";
@@ -1920,7 +2023,7 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             Color[5]="BEC7CD";
             Color[6]="CCCCCC";
         }
-        if (VMHL_M-1==8)//если 8 графика и показаны закрашенные области
+        if (VMHL_M-1==8)//если 8 графика
         {
             Color[0]="6A8795";
             Color[1]="799BAC";
@@ -1931,7 +2034,7 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             Color[6]="BEC7CD";
             Color[7]="CCCCCC";
         }
-        if (VMHL_M-1==9)//если 9 графика и показаны закрашенные области
+        if (VMHL_M-1==9)//если 9 графика
         {
             Color[0]="6a8795";
             Color[1]="799BAC";
@@ -1943,7 +2046,7 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             Color[7]="BEC7CD";
             Color[8]="CCCCCC";
         }
-        if (VMHL_M-1>9)//если больше 9 графика и показаны закрашенные области
+        if (VMHL_M-1>9)//если больше 9 графика
         {
             double position;
             for (j=0;j<VMHL_M-1;j++)
@@ -1987,6 +2090,84 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
             ColorArea[1]="plotsecond";
 
             Opacity="0.5";
+        }
+
+        if (VMHL_M-1==3)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E06C65";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==4)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E7CC4C";
+            Color[3]="E06C65";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==5)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E7CC4C";
+            Color[3]="E06C65";
+            Color[4]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==6)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="B5D24E";
+            Color[3]="E7CC4C";
+            Color[4]="E06C65";
+            Color[5]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==7)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E06C65";
+            Color[6]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==8)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E06C65";
+            Color[6]="9D50C8";
+            Color[7]="C64F8F";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M-1==9)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E9AC4C";
+            Color[6]="E06C65";
+            Color[7]="9D50C8";
+            Color[8]="C64F8F";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
         }
     }
 
@@ -2065,13 +2246,42 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
         VMHL_Result+="\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
+
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
     if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -2232,6 +2442,12 @@ template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_Matrix
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -2589,6 +2805,84 @@ template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **
 
             Opacity="0.5";
         }
+
+        if (VMHL_M/2==3)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E06C65";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==4)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E7CC4C";
+            Color[3]="E06C65";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==5)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="E7CC4C";
+            Color[3]="E06C65";
+            Color[4]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==6)
+        {
+            Color[0]="97BBCD";
+            Color[1]="4AC955";
+            Color[2]="B5D24E";
+            Color[3]="E7CC4C";
+            Color[4]="E06C65";
+            Color[5]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==7)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E06C65";
+            Color[6]="9D50C8";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==8)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E06C65";
+            Color[6]="9D50C8";
+            Color[7]="C64F8F";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
+        if (VMHL_M/2==9)
+        {
+            Color[0]="6250C9";
+            Color[1]="97BBCD";
+            Color[2]="4AC955";
+            Color[3]="B5D24E";
+            Color[4]="E7CC4C";
+            Color[5]="E9AC4C";
+            Color[6]="E06C65";
+            Color[7]="9D50C8";
+            Color[8]="C64F8F";
+            for (j=0;j<VMHL_M/2;j++)
+                Color[j]=(THQt_AlphaBlendingColorToColor(0.2,"#"+Color[j],"#000000")).mid(1).toUpper();
+        }
     }
 
     for (j=0;j<VMHL_M/2;j++)
@@ -2675,13 +2969,42 @@ template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **
         VMHL_Result+="\\pgfplotsset{every axis legend/.append style={at={(0.5,-0.25)},anchor=north,legend cell align=left},}\n";
     }
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
+
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
     if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -2847,6 +3170,12 @@ template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -3362,13 +3691,42 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
     }
 
 
+    //Обработаем текст подписи к осям.
+    QString NameVectorXnew=NameVectorX,NameVectorYnew=NameVectorY, subStr;
+
+    subStr=",";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    subStr=".";
+    if (NameVectorXnew.contains(subStr))
+        NameVectorXnew="$"+NameVectorXnew.replace(NameVectorXnew.indexOf(subStr), (subStr).size(), "$,");
+    if (NameVectorYnew.contains(subStr))
+        NameVectorYnew="$"+NameVectorYnew.replace(NameVectorYnew.indexOf(subStr), (subStr).size(), "$,");
+
+    if ((!NameVectorXnew.contains(","))&&(!NameVectorXnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorXnew))
+            NameVectorXnew="$"+NameVectorXnew+"$";
+
+    if ((!NameVectorYnew.contains(","))&&(!NameVectorYnew.contains(".")))
+        if (!HQt_CheckRus(NameVectorYnew))
+            NameVectorYnew="$"+NameVectorYnew+"$";
+
+    NameVectorXnew=NameVectorXnew.replace(";","");
+    NameVectorYnew=NameVectorYnew.replace(";","");
+
+    NameVectorXnew=NameVectorXnew.replace("&","\\");
+    NameVectorYnew=NameVectorYnew.replace("&","\\");
+
     //рисуем область графика и оси
     if (ForNormalSize) VMHL_Result+="\\begin{figure} [H]\n";
     if (ForNormalSize) VMHL_Result+="\\centering\n";
     if (ForNormalSize) VMHL_Result+="\\begin{tikzpicture}\n"; else VMHL_Result+="\\begin{tikzpicture}[scale=0.9, baseline]\n";
     VMHL_Result+="\\begin{axis} [\n";
-    VMHL_Result+="xlabel={"+NameVectorX+"},\n";
-    VMHL_Result+="ylabel={"+NameVectorY+"},\n";
+    VMHL_Result+="xlabel={"+NameVectorXnew+"},\n";
+    VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
     //if (ForNormalSize)
     VMHL_Result+="xmax="+SRightXBoundingBox+",\n";
     //if (ForNormalSize)
@@ -3442,9 +3800,9 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
     {
         //нарисуем закрашенную область
         Plot1+="\\addplot[color=plotmain, draw=none,fill, fill opacity = 0.5,forget plot] coordinates {\n";
-        Plot1+=" ("+QString::number(MinX1)+", "+QString::number(MinY)+") \n";
-        Plot1+=SData1;
-        Plot1+=" ("+QString::number(MaxX1)+", "+QString::number(MinY)+") \n";
+        Plot1+=" ("+QString::number(MinX2)+", "+QString::number(MinY)+") \n";
+        Plot1+=SData2;
+        Plot1+=" ("+QString::number(MaxX2)+", "+QString::number(MinY)+") \n";
         Plot1+="};\n\n";
     }
 
@@ -3452,59 +3810,59 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
     {
         //нарисуем закрашенную область
         Plot1+="\\addplot[color=plotmain, draw=none,fill, fill opacity = 0.5] coordinates {\n";
-        Plot1+=" ("+QString::number(MinX1)+", "+QString::number(MinY)+") \n";
-        Plot1+=SData1;
-        Plot1+=" ("+QString::number(MaxX1)+", "+QString::number(MinY)+") \n";
+        Plot1+=" ("+QString::number(MinX2)+", "+QString::number(MinY)+") \n";
+        Plot1+=SData2;
+        Plot1+=" ("+QString::number(MaxX2)+", "+QString::number(MinY)+") \n";
         Plot1+="};\n";
-        Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
+        Plot1+="\\addlegendentry{"+NameLine2+"};\n\n";
 
         Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
-        Plot2+=SData2;
+        Plot2+=SData1;
         Plot2+="};\n";
-        Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
+        Plot2+="\\addlegendentry{"+NameLine1+"};\n\n";
     }
 
     if ((ShowPoints)&&(ShowLine))
     {
         //Нарисуем график
         Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",very thick] coordinates {\n";
-        Plot1+=SData1;
+        Plot1+=SData2;
         Plot1+="};\n";
-        Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
+        Plot1+="\\addlegendentry{"+NameLine2+"};\n\n";
 
         //Нарисуем график
         Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
-        Plot2+=SData2;
+        Plot2+=SData1;
         Plot2+="};\n";
-        Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
+        Plot2+="\\addlegendentry{"+NameLine1+"};\n\n";
     }
 
     if ((ShowPoints)&&(!ShowLine))
     {
         //Нарисуем график
         Plot1+="\\addplot[color=plotmain, mark=*,mark options={plotmain,opacity = 1, fill=white,thick}"+MarkSize+",only marks] coordinates {\n";
-        Plot1+=SData1;
+        Plot1+=SData2;
         Plot1+="};\n";
-        Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
+        Plot1+="\\addlegendentry{"+NameLine2+"};\n\n";
 
         //Нарисуем график
         Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
-        Plot2+=SData2;
+        Plot2+=SData1;
         Plot2+="};\n";
-        Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
+        Plot2+="\\addlegendentry{"+NameLine1+"};\n\n";
     }
 
     if ((!ShowPoints)&&(ShowLine))
     {
         Plot1+="\\addplot[color=plotmain, no markers,very thick] coordinates {\n";
-        Plot1+=SData1;
+        Plot1+=SData2;
         Plot1+="};\n";
-        Plot1+="\\addlegendentry{"+NameLine1+"};\n\n";
+        Plot1+="\\addlegendentry{"+NameLine2+"};\n\n";
 
         Plot2+="\\addplot[color="+PlotSecond+", mark=*,mark options={"+PlotSecond+",opacity = 1, fill=white,fill opacity = 1, thick,solid}"+MarkSize+",only marks] coordinates {\n";
-        Plot2+=SData2;
+        Plot2+=SData1;
         Plot2+="};\n";
-        Plot2+="\\addlegendentry{"+NameLine2+"};\n\n";
+        Plot2+="\\addlegendentry{"+NameLine1+"};\n\n";
     }
 
     //собираем общий график
@@ -3527,6 +3885,12 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
 
         if (HQt_CheckRus(LabelX)) LabelX="Ox";
         if (HQt_CheckRus(LabelY)) LabelY="Oy";
+
+        LabelX=LabelX.replace(";","");
+        LabelY=LabelY.replace(";","");
+
+        LabelX=LabelX.replace("&","\\");
+        LabelY=LabelY.replace("&","\\");
 
         //Теперь проставим точки
         //Нулевая точка
@@ -3720,7 +4084,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
     */
     QString VMHL_Result;//переменная итогового результата
 
-     VMHL_Result = THQt_LatexShowTwoIndependentChartsOfPointsAndLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true, false);
+    VMHL_Result = THQt_LatexShowTwoIndependentChartsOfPointsAndLine (VMHL_VectorX1, VMHL_VectorY1, VMHL_N1, VMHL_VectorX2, VMHL_VectorY2, VMHL_N2, "", "x", "y", "График 1", "График 2", "Chart"+HQt_RandomString(8), true, true, true, true,true, false);
 
     return VMHL_Result;
 }

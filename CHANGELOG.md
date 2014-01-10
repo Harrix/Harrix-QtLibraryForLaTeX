@@ -1,6 +1,13 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.12
+----
+ * Добавлена функция HQt_ReadHdataToLatexChart.
+ * Дополнен функционал некоторых функций.
+ * Исправлена функция THQt_LatexShowTwoIndependentChartsOfPointsAndLine.
+ * Изменена цветовая палитра в цветных графиках.
+
 1.11
 ----
  * Добавлены функции семейства THQt_LatexShowVector для работы с QStringList.
