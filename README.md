@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.10
+Версия 1.11
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -59,6 +59,9 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
         template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
         template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
         template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector);
 
 - Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
 
@@ -71,6 +74,9 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
         template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);
         template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);
         template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);
 		
 - Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
 

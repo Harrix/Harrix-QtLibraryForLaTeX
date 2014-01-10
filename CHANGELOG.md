@@ -1,6 +1,11 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.11
+----
+ * Добавлены функции семейства THQt_LatexShowVector для работы с QStringList.
+ * Добавлены функции семейства THQt_LatexShowMatrix для работы с QStringList.
+
 1.10
 ----
  * Добавлены функции семейства HQt_LatexDrawLine.

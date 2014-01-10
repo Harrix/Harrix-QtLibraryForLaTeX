@@ -20,15 +20,24 @@ template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QStri
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
 template <class T> QString THQt_LatexShowNumber (T VMHL_X);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
 template <class T> QString THQt_LatexNumberToText (T VMHL_X);//Функция выводит число VMHL_X в строку Latex, причем число выделено жирным.
+
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+QString THQt_LatexShowVector (QStringList VMHL_Vector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);//Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
+
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
 template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix); //Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);//Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами. В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
 
 QString HQt_LatexBeginCompositionFigure ();//Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
 QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label);//Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
