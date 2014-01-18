@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.12
+Версия 1.13
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -155,6 +155,13 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));
+		
+- Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N);
 
 Скриншоты применения функций
 ----------------------------

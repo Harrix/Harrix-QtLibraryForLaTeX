@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.13
+----
+ * Добавлены функции семейства THQt_LatexShowBar.
+
 1.12
 ----
  * Добавлена функция HQt_ReadHdataToLatexChart.
