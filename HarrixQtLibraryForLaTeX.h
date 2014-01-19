@@ -98,6 +98,9 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);//От основной функции отличается отсутствием параметра MinZero.
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label);//От основной функции отличается отсутствием параметра MinZero и ForNormalSize.
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N);//От основной функции отличается отсутствием параметра MinZero и ForNormalSize и всех текстовых параметров.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);//От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);//От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменой MinZero.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);// От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
 
 QString HQt_ReadHdataToLatexChart (QString filename);//Функция возвращает строку с Latex кодом графика в результате считывания информации из *.hdata версии Harrix Data 1.0.
 
@@ -4186,6 +4189,9 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
     VMHL_Result+="xminorgrids=false,\n";
     VMHL_Result+="ylabel={"+NameVectorYnew+"},\n";
 
+    double MinD=10;
+    if (!ForNormalSize) MinD=5;
+
     if ((MinY>=0)&&(MaxY>=0)&&(MinY!=MaxY))
     {
 
@@ -4193,20 +4199,20 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
         if (MinZero)
             VMHL_Result+="ymin=0,\n";
         else
-            VMHL_Result+="ymin="+QString::number(MinY-LengthY/12.)+",\n";
+            VMHL_Result+="ymin="+QString::number(MinY-LengthY/MinD)+",\n";
     }
 
     if ((MinY<0)&&(MaxY>=0))
     {
 
-        VMHL_Result+="ymin="+QString::number(MinY-LengthY/12.)+",\n";
+        VMHL_Result+="ymin="+QString::number(MinY-LengthY/MinD)+",\n";
         VMHL_Result+="ymax="+QString::number(MaxY+LengthY/15.)+",\n";
     }
 
     if ((MinY<0)&&(MaxY<0)&&(MinY!=MaxY))
     {
 
-        VMHL_Result+="ymin="+QString::number(MinY-LengthY/12.)+",\n";
+        VMHL_Result+="ymin="+QString::number(MinY-LengthY/MinD)+",\n";
         if (MinZero)
             VMHL_Result+="ymax=0,\n";
         else
@@ -4217,13 +4223,13 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
     {
         if (MinZero)
         {
-            VMHL_Result+="ymax="+QString::number(MaxY+(fabs(MinY)/12.))+",\n";
+            VMHL_Result+="ymax="+QString::number(MaxY+(fabs(MinY)/MinD))+",\n";
             VMHL_Result+="ymin=0,\n";
         }
         else
         {
-            VMHL_Result+="ymax="+QString::number(MaxY+(fabs(MinY)/12.)/12.)+",\n";
-            VMHL_Result+="ymin="+QString::number(MinY-fabs(MinY)/12.)+",\n";
+            VMHL_Result+="ymax="+QString::number(MaxY+(fabs(MinY)/MinD)/MinD)+",\n";
+            VMHL_Result+="ymin="+QString::number(MinY-fabs(MinY)/MinD)+",\n";
         }
     }
 
@@ -4233,12 +4239,12 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
         if (MinZero)
         {
             VMHL_Result+="ymax=0,\n";
-            VMHL_Result+="ymin="+QString::number(MinY-(fabs(MinY)/12.))+",\n";
+            VMHL_Result+="ymin="+QString::number(MinY-(fabs(MinY)/MinD))+",\n";
         }
         else
         {
-            VMHL_Result+="ymax="+QString::number(MaxY+fabs(MinY)/12.)+",\n";
-            VMHL_Result+="ymin="+QString::number(MinY-(fabs(MinY)/12.)/12.)+",\n";
+            VMHL_Result+="ymax="+QString::number(MaxY+fabs(MinY)/MinD)+",\n";
+            VMHL_Result+="ymin="+QString::number(MinY-(fabs(MinY)/MinD)/MinD)+",\n";
         }
     }
 
@@ -4253,18 +4259,157 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
         VMHL_Result+="height=5.8cm,\n";
         VMHL_Result+="width=8.5cm,\n";
     }
-    VMHL_Result+="bar width=2.0cm,\n";
-    VMHL_Result+="enlarge x limits=.15,\n";
 
     VMHL_Result+="xticklabels={";
     for (i=0;i<VMHL_N-1;i++) VMHL_Result+=NameVectorXnew[i]+", ";
     VMHL_Result+=NameVectorXnew[VMHL_N-1]+"},\n";
 
     VMHL_Result+="xtick=data,\n";
+    VMHL_Result+="minor x tick num=0,\n";
     VMHL_Result+="nodes near coords,\n";
     VMHL_Result+="nodes near coords align={vertical},\n";
-    VMHL_Result+="every node near coord/.style={color=black},\n";
-    VMHL_Result+="x tick label style={font=\\small,text width=1.7cm,align=center},\n";
+
+    if (ForNormalSize)
+    {
+        if (VMHL_N>10)
+    VMHL_Result+="every node near coord/.style={color=black,font=\\tiny},\n";
+        else
+          VMHL_Result+="every node near coord/.style={color=black},\n";
+    }
+    else
+        VMHL_Result+="every node near coord/.style={color=black,font=\\tiny},\n";
+
+    QString BarWidth;
+    QString TextWidth;
+    QString XLimits;
+    if (ForNormalSize)
+    {
+        BarWidth="bar width=2.0cm,\n";
+        TextWidth="x tick label style={font=\\small,text width=1.7cm,align=center},\n";
+        XLimits="enlarge x limits=.15,\n";
+
+        if (VMHL_N==1)
+        {
+            BarWidth="bar width=3.0cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=15cm,align=center},\n";
+        }
+
+        if (VMHL_N==2)
+        {
+            BarWidth="bar width=3.0cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=7cm,align=center},\n";
+            XLimits="enlarge x limits=.4,\n";
+        }
+
+        if (VMHL_N==3)
+        {
+            BarWidth="bar width=2.5cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=4cm,align=center},\n";
+        }
+
+        if (VMHL_N==4)
+        {
+            BarWidth="bar width=2cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=1.9cm,align=center},\n";
+        }
+
+        if (VMHL_N==6)
+        {
+            BarWidth="bar width=2cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=1.7cm,align=center},\n";
+        }
+
+        if (VMHL_N==7)
+        {
+            BarWidth="bar width=1.8cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=1.5cm,align=center},\n";
+        }
+
+        if (VMHL_N==8)
+        {
+            BarWidth="bar width=1.5cm,\n";
+            TextWidth="x tick label style={font=\\tiny,text width=1.4cm,align=center},\n";
+        }
+
+        if (VMHL_N==9)
+        {
+            BarWidth="bar width=1.2cm,\n";
+            TextWidth="x tick label style={font=\\tiny,rotate=45,anchor=east},\n";
+        }
+
+        if (VMHL_N==10)
+        {
+            BarWidth="bar width=1.0cm,\n";
+            TextWidth="x tick label style={font=\\tiny,rotate=45,anchor=east},\n";
+        }
+
+        if (VMHL_N==11)
+        {
+            BarWidth="bar width=0.8cm,\n";
+        }
+
+        if (VMHL_N>=11)
+        {
+            TextWidth="x tick label style={font=\\tiny,rotate=45,anchor=east},\n";
+            XLimits="enlarge x limits=.05,\n";
+        }
+
+        if (VMHL_N==12)
+        {
+            BarWidth="bar width=0.75cm,\n";
+        }
+
+        if (VMHL_N==13)
+        {
+            BarWidth="bar width=0.65cm,\n";
+        }
+
+        if (VMHL_N>=14)
+        {
+            BarWidth="";
+        }
+
+
+    }
+    else
+    {
+        BarWidth="bar width=0.8cm,\n";
+        TextWidth="x tick label style={font=\\tiny,rotate=45,anchor=east},\n";
+        XLimits="enlarge x limits=.15,\n";
+
+        if (VMHL_N==1)
+        {
+            BarWidth="bar width=1.0cm,\n";
+            TextWidth="x tick label style={font=\\tiny,text width=8cm,align=center},\n";
+        }
+
+        if (VMHL_N==2)
+        {
+            BarWidth="bar width=1.0cm,\n";
+            TextWidth="x tick label style={font=\\small,text width=4cm,align=center},\n";
+            XLimits="enlarge x limits=.4,\n";
+        }
+
+        if (VMHL_N==8)
+        {
+            BarWidth="bar width=0.6cm,\n";
+        }
+
+        if (VMHL_N>=9)
+        {
+            BarWidth="";
+        }
+
+        if (VMHL_N>=11)
+        {
+            XLimits="enlarge x limits=.05,\n";
+        }
+    }
+    VMHL_Result+=BarWidth;
+    VMHL_Result+=TextWidth;
+    VMHL_Result+=XLimits;
+
+
     VMHL_Result+="]\n\n";
 
 
@@ -4371,6 +4516,93 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N)
     VMHL_Result = THQt_LatexShowBar (VMHL_Vector, VMHL_N, "График", NameVectorX, "y",  "Chart"+HQt_RandomString(8), true, false);
 
     delete [] NameVectorX;
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero)
+{
+    /*
+    Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве.
+    Входные параметры:
+     VMHL_Vector - указатель на вектор значений точек;
+     VMHL_N - количество точек;
+     TitleChart - заголовок графика;
+     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+     Label - label для графика;
+     ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается;
+     MinZero - гистограмму начинать с нуля (true) или с минимального значения среди VMHL_Vector (false).
+    Возвращаемое значение:
+     Строка с Latex кодами с выводимым графиком.
+    */
+    QString VMHL_Result;//переменная итогового результата
+
+    QString *NameVectorXArray = new QString [VMHL_N];
+    for (int i=0;i<VMHL_N;i++) NameVectorXArray[i]=NameVectorX.at(i);
+
+    VMHL_Result = THQt_LatexShowBar (VMHL_Vector, VMHL_N, TitleChart, NameVectorXArray, NameVectorY, Label, ForNormalSize, MinZero);
+
+    delete [] NameVectorXArray;
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize)
+{
+    /*
+    Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменой MinZero.
+    Входные параметры:
+     VMHL_Vector - указатель на вектор значений точек;
+     VMHL_N - количество точек;
+     TitleChart - заголовок графика;
+     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+     Label - label для графика;
+     ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается.
+    Возвращаемое значение:
+     Строка с Latex кодами с выводимым графиком.
+    */
+    QString VMHL_Result;//переменная итогового результата
+
+    QString *NameVectorXArray = new QString [VMHL_N];
+    for (int i=0;i<VMHL_N;i++) NameVectorXArray[i]=NameVectorX.at(i);
+
+    VMHL_Result = THQt_LatexShowBar (VMHL_Vector, VMHL_N, TitleChart, NameVectorXArray, NameVectorY, Label, ForNormalSize, true);
+
+    delete [] NameVectorXArray;
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label)
+{
+    /*
+    Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
+    Входные параметры:
+     VMHL_Vector - указатель на вектор значений точек;
+     VMHL_N - количество точек;
+     TitleChart - заголовок графика;
+     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+     Label - label для графика.
+    Возвращаемое значение:
+     Строка с Latex кодами с выводимым графиком.
+    */
+    QString VMHL_Result;//переменная итогового результата
+
+    QString *NameVectorXArray = new QString [VMHL_N];
+    for (int i=0;i<VMHL_N;i++) NameVectorXArray[i]=NameVectorX.at(i);
+
+    VMHL_Result = THQt_LatexShowBar (VMHL_Vector, VMHL_N, TitleChart, NameVectorXArray, NameVectorY, Label, true, true);
+
+    delete [] NameVectorXArray;
 
     return VMHL_Result;
 }

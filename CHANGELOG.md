@@ -1,6 +1,11 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.14
+----
+ * Добавлены функции семейства THQt_LatexShowBar с работой QStringList.
+ * В основную функцию THQt_LatexShowBar введены дополнительные возможности.
+
 1.13
 ----
  * Добавлены функции семейства THQt_LatexShowBar.
