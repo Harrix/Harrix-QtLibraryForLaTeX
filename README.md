@@ -171,6 +171,14 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
 ![alt text](../master/images/example.png "Пример использования функций")
 
+![alt text](../master/images/example2.png "Пример использования функций")
+
+![alt text](../master/images/example3.png "Пример использования функций")
+
+![alt text](../master/images/example4.png "Пример использования функций")
+
+![alt text](../master/images/example5.png "Пример использования функций")
+
 Пример использования функция вывода в Latex файл
 -----------------------------------------------
 
