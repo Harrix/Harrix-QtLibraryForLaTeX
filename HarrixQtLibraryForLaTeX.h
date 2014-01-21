@@ -8,6 +8,7 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 QString HQt_LatexBegin();//Возвращает начало для полноценного Latex файла.
+QString HQt_LatexBeginWithPgfplots();//Возвращает начало для полноценного Latex файла с использованием графиков через пакет pgfplots.
 QString HQt_LatexEnd();//Возвращает концовку для полноценного Latex файла.
 
 QString HQt_LatexShowText (QString TitleX);//Функция возвращает строку с выводом некоторой строки с Latex кодами.

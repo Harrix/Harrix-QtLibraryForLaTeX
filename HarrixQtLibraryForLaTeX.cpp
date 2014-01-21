@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.14
+//Версия 1.15
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -15,6 +15,25 @@ QString HQt_LatexBegin()
     VMHL_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
     VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
     VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VMHL_Result+="\\begin{document}\n\n";
+    VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
+
+    return VMHL_Result;
+}
+//--------------------------------------------------------------------------
+
+QString HQt_LatexBeginWithPgfplots()
+{
+    /*
+     Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
+     с использованием графиков через пакет pgfplots.
+     */
+    QString VMHL_Result;
+    VMHL_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
+    VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
+    VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VMHL_Result+="\\usepgfplotslibrary{external}\n";
+    VMHL_Result+="\\tikzexternalize[prefix=TikzPictures/]\n\n";
     VMHL_Result+="\\begin{document}\n\n";
     VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
 

@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.15
+----
+ * Добавление функции HQt_LatexBeginWithPgfplots.
+
 1.14
 ----
  * Добавлены функции семейства THQt_LatexShowBar с работой QStringList.
