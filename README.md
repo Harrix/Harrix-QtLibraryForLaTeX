@@ -179,14 +179,12 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 - [HarrixQtLibraryForLaTeX.h](../master/HarrixQtLibraryForLaTeX.h)
 - [HarrixQtLibrary.cpp](../master/HarrixQtLibrary.cpp)
 - [HarrixQtLibrary.h](../master/HarrixQtLibrary.h)
-- [HarrixMathLibrary.cpp](../master/HarrixQtLibrary.cpp)
-- [HarrixMathLibrary.h](../master/HarrixQtLibrary.h)
-- [HarrixMathLibrary.cpp](../master/HarrixQtLibrary.cpp)
-- [HarrixMathLibrary.h](../master/HarrixQtLibrary.h)
+- [HarrixMathLibrary.cpp](../master/HarrixMathLibrary.cpp)
+- [HarrixMathLibrary.h](../master/HarrixMathLibrary.h)
 - [mtrand.cpp](../master/mtrand.cpp)
 - [mtrand.h](../master/mtrand.cpp)
 
-А файлы из списка в папку, где у вас должен быть Latex документ.
+А файлы из списка ниже в папку, где у вас должен быть Latex документ.
 - [styles.tex](../master/styles.tex)
 - [packages.tex](../master/packages.tex)
 - [names.tex](../master/names.tex)
