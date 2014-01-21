@@ -179,8 +179,8 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
 ![alt text](../master/images/example5.png "Пример использования функций")
 
-Пример использования функция вывода в Latex файл
------------------------------------------------
+Установка и использования функция вывода в Latex файл
+-----------------------------------------------------
 
 Скопируйте файлы из списка в папку с исходниками вашего проекта.
 - [HarrixQtLibraryForLaTeX.cpp](../master/HarrixQtLibraryForLaTeX.cpp)
