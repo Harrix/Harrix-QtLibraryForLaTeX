@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.16
+----
+ * Добавлены функции семейства THQt_LatexShow3DPlotPoints.
+
 1.15
 ----
  * Добавление функции HQt_LatexBeginWithPgfplots.
