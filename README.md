@@ -162,18 +162,18 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
         template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
         template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label);
         template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N);
-		template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
-		template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
-		template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);
 
- - Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
+- Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
  
         template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, bool ForNormalSize);
         template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, bool ForNormalSize);
         template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);
         template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N);
 		
- - Функция возвращает строку с выводом некоторого 3D графика в виде поверхности.
+- Функция возвращает строку с выводом некоторого 3D графика в виде поверхности.
  
         template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, double Opacity, double AngleHorizontal, double AngleVertical, bool ColorBar, bool ForNormalSize);
         template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar, bool ForNormalSize);
