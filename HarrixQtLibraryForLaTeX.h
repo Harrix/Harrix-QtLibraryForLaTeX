@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.17
+//Версия 1.18
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -4717,6 +4717,7 @@ template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_
     VMHL_Result+="z buffer=sort,\n";
     VMHL_Result+="colormap name="+ColorMap+",\n";
     if (!ForNormalSize) VMHL_Result+="label style={font=\\tiny},\n";
+    if (ForNormalSize)  VMHL_Result+="label style={font=\\small},\n";
     if (!ForNormalSize) VMHL_Result+="tick label style={font=\\tiny},\n";
     VMHL_Result+="]\n\n";
 
@@ -4933,6 +4934,7 @@ template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_Vector
     VMHL_Result+="z buffer=sort,\n";
     VMHL_Result+="colormap name="+ColorMap+",\n";
     if (!ForNormalSize) VMHL_Result+="label style={font=\\tiny},\n";
+    if (ForNormalSize)  VMHL_Result+="label style={font=\\small},\n";
     if (!ForNormalSize) VMHL_Result+="tick label style={font=\\tiny},\n";
     if (ColorBar) VMHL_Result+="colorbar,\n";
     if (ColorBar) VMHL_Result+="colorbar style={axis lines=box},\n";

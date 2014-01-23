@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.17
+Версия 1.18
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -194,6 +194,14 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 ![alt text](../master/images/example4.png "Пример использования функций")
 
 ![alt text](../master/images/example5.png "Пример использования функций")
+
+![alt text](../master/images/example6.png "Пример использования функций")
+
+![alt text](../master/images/example7.png "Пример использования функций")
+
+![alt text](../master/images/example8.png "Пример использования функций")
+
+![alt text](../master/images/example9.png "Пример использования функций")
 
 Установка и использования функций вывода в Latex файл
 -----------------------------------------------------
