@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.17
+----
+ * Добавлены функции семейства THQt_LatexShow3DPlot.
+
 1.16
 ----
  * Добавлены функции семейства THQt_LatexShow3DPlotPoints.
