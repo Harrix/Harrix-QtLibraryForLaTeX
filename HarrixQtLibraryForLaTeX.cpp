@@ -1115,7 +1115,7 @@ QString HQt_ReadHdataToLatexChart (QString filename)
             }
             List.removeFirst();
             List.removeLast();
-            //теперь в List находитсz только нормальный объем данных
+            //теперь в List находится только нормальный объем данных
         }
         else
         {
