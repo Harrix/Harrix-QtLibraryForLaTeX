@@ -1309,7 +1309,6 @@ QString HQt_ReadHdataToLatexChart (QString filename)
     catch(...)
     {
         VMHL_Result+=HQt_LatexShowAlert ("Неизвестная ошибка.");
-        VMHL_Result="";
     }
 
     return VMHL_Result;
