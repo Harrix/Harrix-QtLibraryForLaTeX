@@ -108,9 +108,9 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);//От основной функции отличается отсутствием параметра MinZero.
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label);//От основной функции отличается отсутствием параметра MinZero и ForNormalSize.
 template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N);//От основной функции отличается отсутствием параметра MinZero и ForNormalSize и всех текстовых параметров.
-template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);//От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве.
-template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);//От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменой MinZero.
-template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);// От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);//От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);//От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве. Еще нет переменой MinZero.
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);// От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
 
 template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, bool ForNormalSize);// Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
 template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, bool ForNormalSize);//В отличии от основной функции отсутствует параметр ColorMap.
@@ -4136,7 +4136,7 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика;
      ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается;
@@ -4489,7 +4489,7 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика;
      ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается.
@@ -4513,7 +4513,7 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика.
     Возвращаемое значение:
@@ -4555,12 +4555,12 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
 {
     /*
     Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
-    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве.
+    От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве.
     Входные параметры:
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика;
      ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается;
@@ -4585,12 +4585,12 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
 {
     /*
     Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
-    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменой MinZero.
+    От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве. Еще нет переменой MinZero.
     Входные параметры:
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика;
      ForNormalSize - нормальный размер графика (на всю ширину), или для маленького размера график создается.
@@ -4614,12 +4614,12 @@ template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QStrin
 {
     /*
     Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
-    От основной функции отличается тем, что список наименований харнится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
+    От основной функции отличается тем, что список наименований хранится в QStringList, а не массиве. Еще нет переменых MinZero и ForNormalSize.
     Входные параметры:
      VMHL_Vector - указатель на вектор значений точек;
      VMHL_N - количество точек;
      TitleChart - заголовок графика;
-     NameVectorX - название значений точек. Будут подписаны подкаждым столбиком на оси Ox. Количество элементов VMHL_N;
+     NameVectorX - название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL_N;
      NameVectorY - название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
      Label - label для графика.
     Возвращаемое значение:
