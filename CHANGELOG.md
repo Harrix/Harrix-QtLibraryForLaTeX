@@ -1,6 +1,12 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.20
+----
+ * Добавлено подключение #include <math.h>.
+ * В функцию HQt_ReadHdataToLatexChart добавлена поддержка гистограмм.
+ * В функцию HQt_ReadHdataToLatexChart добавлена 3D графика точками.
+
 1.19
 ----
  * Добавлены функции семейства THQt_LatexDraw3DPlot.

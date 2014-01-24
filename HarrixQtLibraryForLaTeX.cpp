@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.19
+//Версия 1.20
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -986,9 +986,9 @@ QString HQt_ReadHdataToLatexChart (QString filename)
             VMHL_Result+=HQt_LatexShowAlert ("Это не формат HarrixFileFormat.");
             return VMHL_Result;
         }
-        if (HQt_TextAfterEqualSign (String)!="Harrix Data 1.0")
+        if ((HQt_TextAfterEqualSign (String)!="Harrix Data 1.1")&&(HQt_TextAfterEqualSign (String)!="Harrix Data 1.0"))
         {
-            VMHL_Result+=HQt_LatexShowAlert ("Это не версия Harrix Data 1.0.");
+            VMHL_Result+=HQt_LatexShowAlert ("Это не версия Harrix Data 1.0 или 1.1.");
             return VMHL_Result;
         }
 
@@ -1011,17 +1011,20 @@ QString HQt_ReadHdataToLatexChart (QString filename)
         QString Title;
         QString AxisX;
         QString AxisY;
+        QString AxisZ;
         bool ShowLine=false;
         bool ShowPoints=false;
         bool ShowArea=false;
         bool ShowSpecPoints=false;
         bool RedLine=false;
+        bool MinZero=false;
 
         //предварительные переменные
         QString TempType;
         QString TempTitle;
         QString TempAxisX;
         QString TempAxisY;
+        QString TempAxisZ;
         QString TempParameters;
 
         QString After;
@@ -1042,6 +1045,7 @@ QString HQt_ReadHdataToLatexChart (QString filename)
             if (Before=="Title") TempTitle=After;
             if (Before=="AxisX") TempAxisX=After;
             if (Before=="AxisY") TempAxisY=After;
+            if (Before=="AxisZ") TempAxisZ=After;
             if (Before=="Parameters") TempParameters=After;
             i++;
         }
@@ -1052,6 +1056,7 @@ QString HQt_ReadHdataToLatexChart (QString filename)
         Title=TempTitle;
         AxisX=TempAxisX;
         AxisY=TempAxisY;
+        AxisZ=TempAxisZ;
 
         if (TempType=="Line") Type="Line";
         if (TempType=="TwoLines") Type="TwoLines";
@@ -1059,6 +1064,8 @@ QString HQt_ReadHdataToLatexChart (QString filename)
         if (TempType=="SeveralIndependentLines") Type="SeveralIndependentLines";
         if (TempType=="SeveralLines") Type="SeveralLines";
         if (TempType=="PointsAndLine") Type="PointsAndLine";
+        if (TempType=="Bar") Type="Bar";
+        if (TempType=="3DPoints") Type="3DPoints";
 
         QStringList ListParameters = TempParameters.split( ",", QString::SkipEmptyParts );
         for (int j=0;j<ListParameters.count();j++)
@@ -1070,6 +1077,7 @@ QString HQt_ReadHdataToLatexChart (QString filename)
             if (String=="ShowArea") ShowArea=true;
             if (String=="ShowSpecPoints") ShowSpecPoints=true;
             if (String=="RedLine") RedLine=true;
+            if (String=="MinZero") MinZero=true;
         }
 
         if ((ShowLine==false)&&(ShowPoints==false)) ShowLine=true;
@@ -1265,6 +1273,37 @@ QString HQt_ReadHdataToLatexChart (QString filename)
             delete []dataX2;
             delete []dataY1;
             delete []dataY2;
+        }
+        if (Type=="Bar")
+        {
+            int N=HQt_CountOfRowsFromQStringList(List);
+            double *data=new double [N];
+            THQt_ReadVectorFromQStringList(List,data);
+
+            if (ListNamesOfCharts.count()<1) ListNamesOfCharts << "";
+
+            VMHL_Result += THQt_LatexShowBar (data, N, Title, ListNamesOfCharts, AxisY, "Chart"+HQt_RandomString(8), true, MinZero);
+
+            delete []data;
+        }
+        if (Type=="3DPoints")
+        {
+            int N=HQt_CountOfRowsFromQStringList(List,0);
+            double *dataX=new double [N];
+            double *dataY=new double [N];
+            double *dataZ=new double [N];
+
+            THQt_ReadColFromQStringList(List,0,dataX);
+            THQt_ReadColFromQStringList(List,1,dataY);
+            THQt_ReadColFromQStringList(List,2,dataZ);
+
+            if (ListNamesOfCharts.count()<1) ListNamesOfCharts << "";
+
+            VMHL_Result +=THQt_LatexShow3DPlotPoints (dataX, dataY, dataZ, N, Title, AxisX, AxisY, AxisZ, "Chart"+HQt_RandomString(8), "mathcad",true);
+
+            delete []dataX;
+            delete []dataY;
+            delete []dataZ;
         }
     }
     catch(...)

@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.19
+//Версия 1.20
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -8,6 +8,7 @@
 #define HARRIXQTLIBRARYFORLATEX_H
 
 #include "HarrixQtLibrary.h"
+#include <math.h>
 
 enum TypeOf3DPlot { Plot3D_Points, Plot3D_Surface, Plot3D_SurfaceGrid, Plot3D_TopView};//тип 3D граифка в виде поверхности
 
