@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.21
+----
+ * Функция HQt_ReadHdataToLatexChart удалена из библиотеки, так как ее функцию выполняет теперь класс HarrixClass_HarrixData.
+
 1.20
 ----
  * Добавлено подключение #include <math.h>.

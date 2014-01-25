@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.20
+//Версия 1.21
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -131,8 +131,6 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);//По сравнению с основным сайтом отсутствуют параметры Opacity, AngleHorizontal, AngleVertical и ForNormalSize, ColorBar, ColorMap, Type.
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double));//По сравнению с основным сайтом отсутствуют все дополнительные параметры.
 QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double));//По сравнению с основным сайтом отсутствуют все дополнительные параметры и для всех осей одинаковые границы изменения.
-
-QString HQt_ReadHdataToLatexChart (QString filename);//Функция возвращает строку с Latex кодом графика в результате считывания информации из *.hdata версии Harrix Data 1.0.
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // РЕАЛИЗАЦИЯ ШАБЛОНОВ
