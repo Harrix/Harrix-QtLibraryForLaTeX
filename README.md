@@ -9,6 +9,11 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
 Библиотека распространяется по лицензии [Apache License, Version 2.0](../master/LICENSE.txt).
 
+Установка
+---------
+
+Подробно о установке с подробным примером можно прочитать тут http://blog.harrix.org/?p=1164.
+
 Функции для получения LaTeX кода 
 --------------------------------
 
@@ -214,82 +219,11 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 
 ![alt text](../master/images/example9.png "Пример использования функций")
 
-Установка и использования функций вывода в Latex файл
------------------------------------------------------
+Использованные технологии
+-------------------------
 
-Скопируйте файлы из списка в папку с исходниками вашего проекта.
-- [HarrixQtLibraryForLaTeX.cpp](../master/HarrixQtLibraryForLaTeX.cpp)
-- [HarrixQtLibraryForLaTeX.h](../master/HarrixQtLibraryForLaTeX.h)
-- [HarrixQtLibrary.cpp](../master/HarrixQtLibrary.cpp)
-- [HarrixQtLibrary.h](../master/HarrixQtLibrary.h)
-- [HarrixMathLibrary.cpp](../master/HarrixMathLibrary.cpp)
-- [HarrixMathLibrary.h](../master/HarrixMathLibrary.h)
-- [mtrand.cpp](../master/mtrand.cpp)
-- [mtrand.h](../master/mtrand.cpp)
-
-А файлы из списка ниже в папку, где у вас должен быть Latex документ.
-- [styles.tex](../master/styles.tex)
-- [packages.tex](../master/packages.tex)
-- [names.tex](../master/names.tex)
-
-Добавьте  соответствующие инклуды:
-
-```cpp
-#include "HarrixQtLibrary.h"
-#include "HarrixQtLibraryForLaTeX.h"
-#include "HarrixMathLibrary.h"
-```
-
-Объявите, например, в mainwindow.h глобальные переменные:
-
-```cpp
-QString DS;//разделитель между папками: слэш или иное в данной ОС
-QString Path;//путь к папке с программой
-QString LaTeX;//сюда кладется выводимый текст
-```
-
-Вам нужно вызвать данные 4 строчки, например, в конструкторе ``MainWindow::MainWindow(QWidget *parent)``:
-
-```cpp
-DS=QDir::separator();//какой разделитель используется в пути между папками
-Path=QGuiApplication::applicationDirPath()+DS;//путь к папке, где находится приложение
-```
-	
-Теперь в любом месте, где хотите добавить текст html и его отобразить, пишите:
-
-```cpp
-    QString Latex;
-
-    Latex+=HQt_LatexBegin();
-
-    ////////////////////////////////////////////////////////
-
-    Latex+=HQt_LatexShowSection("Рассказ");
-
-    Latex+=HQt_LatexShowSubsection("Ten");
-
-    Latex+=HQt_LatexShowText("Вот так я нашел истину");
-
-    Latex+=HQt_LatexShowSimpleText("И это была логика.");
-
-    Latex+=HQt_LatexShowHr ();
-
-    Latex+=HQt_LatexShowAlert ("Внимание!! Нельзя купить или продать!");
-
-    double y=5.987;
-    Latex+=THQt_LatexShowNumber (y, "Положение крабовой палочки ", "y");
-
-    Latex+=THQt_LatexShowNumber (y,"y");
-
-    Latex+=THQt_LatexShowNumber (y);
-
-    ////////////////////////////////////////////////////////
-
-    Latex+=HQt_LatexEnd();
-    HQt_SaveFile(Latex, Path+"Example.tex");
-```
-	
-И теперь у нас есть Latex **Example.tex**, в котором у нас находится наш текст.
+- Qt, LaTeX, MiKTeX, TeXstudio, pgfplots.
+- HarrixQtLibrary, HarrixQtLibraryForLaTeX, HarrixHtmlForQWebView, HarrixLaTeXDocumentTemplate, HarrixMathLibrary.
 
 Сведения для редактирования файлов
 ----------------------------------
@@ -299,7 +233,6 @@ Path=QGuiApplication::applicationDirPath()+DS;//путь к папке, где �
 В варианте, который использует автор, в \*.tex файлах справок для отображения русских букв используется модуль pscyr. Об его установке можно прочитать (и скачать) в статье http://blog.harrix.org/?p=444.
 
 Подробное описание установки и настройки связки MiKTeX + TeXstudio + pscyr можно прочитать в статье http://blog.harrix.org/?p=849.
-
 
 История проекта
 ---------------
