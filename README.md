@@ -223,7 +223,7 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 -------------------------
 
 - Qt, LaTeX, MiKTeX, TeXstudio, pgfplots.
-- HarrixQtLibrary, HarrixQtLibraryForLaTeX, HarrixLaTeXDocumentTemplate, HarrixMathLibrary.
+- HarrixQtLibrary, HarrixLaTeXDocumentTemplate, HarrixMathLibrary.
 
 Сведения для редактирования файлов
 ----------------------------------
