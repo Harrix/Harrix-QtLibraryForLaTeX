@@ -223,7 +223,7 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 -------------------------
 
 - [Qt](http://qt-project.org/), [LaTeX](http://ru.wikipedia.org/wiki/LaTeX), [MiKTeX](http://miktex.org/), [TeXstudio](http://texstudio.sourceforge.net/), [PSCyr](http://blog.harrix.org/?p=444), [pgfplots](http://pgfplots.sourceforge.net/).
-- [HarrixQtLibrary](https://github.com/Harrix/HarrixQtLibrary), [HarrixLaTeXDocumentTemplate](https://github.com/Harrix/HarrixLaTeXDocumentTemplate), [HarrixMathLibrary](https://github.com/Harrix/HarrixMathLibrary).
+- [HarrixQtLibrary](https://github.com/Harrix/HarrixQtLibrary), [HarrixLaTeXDocumentTemplate](https://github.com/Harrix/HarrixLaTeXDocumentTemplate), [HarrixMathLibrary](https://github.com/Harrix/HarrixMathLibrary), [mtrand](http://www.bedaux.net/mtrand/).
 
 Сведения для редактирования файлов
 ----------------------------------
