@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.21
+Версия 1.22
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -20,6 +20,18 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 - Возвращает начало для полноценного Latex файла.
 
         QString HQt_LatexBegin();
+		
+- Возвращает начало для полноценного Latex файла с использованием графиков через пакет pgfplots.
+
+        QString HQt_LatexBeginWithPgfplots();
+
+- Возвращает начало для полноценного Latex файла в виде статьи.
+
+        QString HQt_LatexBeginArticle();
+
+- Возвращает начало для полноценного Latex файла в виде статьи с использованием графиков через пакет pgfplots.
+
+        QString HQt_LatexBeginArticleWithPgfplots();
 
 - Возвращает концовку для полноценного Latex файла.
 

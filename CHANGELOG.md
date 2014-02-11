@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.22
+----
+ * Добавлены функции HQt_LatexBeginArticle, HQt_LatexBeginArticleWithPgfplots.
+
 1.21
 ----
  * Функция HQt_ReadHdataToLatexChart удалена из библиотеки, так как ее функцию выполняет теперь класс HarrixClass_HarrixData.

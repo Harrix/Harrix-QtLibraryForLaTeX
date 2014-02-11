@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.21
+//Версия 1.22
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -18,6 +18,8 @@ enum TypeOf3DPlot { Plot3D_Points, Plot3D_Surface, Plot3D_SurfaceGrid, Plot3D_To
 
 QString HQt_LatexBegin();//Возвращает начало для полноценного Latex файла.
 QString HQt_LatexBeginWithPgfplots();//Возвращает начало для полноценного Latex файла с использованием графиков через пакет pgfplots.
+QString HQt_LatexBeginArticle();//Возвращает начало для полноценного Latex файла в виде статьи.
+QString HQt_LatexBeginArticleWithPgfplots();//Возвращает начало для полноценного Latex файла в виде статьи с использованием графиков через пакет pgfplots.
 QString HQt_LatexEnd();//Возвращает концовку для полноценного Latex файла.
 
 QString HQt_LatexShowText (QString TitleX);//Функция возвращает строку с выводом некоторой строки с Latex кодами.
