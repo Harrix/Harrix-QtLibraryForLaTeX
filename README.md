@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.22
+Версия 1.23
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -36,6 +36,10 @@ https://github.com/Harrix/HarrixQtLibraryForLaTeX
 - Возвращает концовку для полноценного Latex файла.
 
         QString HQt_LatexEnd();
+		
+- Функция переводит текст в текст, который можно добавить в Latex код.
+
+        QString HQt_TextToTextForLatex (QString Text)
 
 - Функция возвращает строку с выводом некоторой строки с Latex кодами.
 

@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.23
+----
+ * Добавлена функция HQt_TextToTextForLatex.
+ 
 1.22
 ----
  * Добавлены функции HQt_LatexBeginArticle, HQt_LatexBeginArticleWithPgfplots.
