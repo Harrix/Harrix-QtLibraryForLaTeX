@@ -1,18 +1,18 @@
-HarrixQtLibraryForQWebView
-==========================
+HarrixQtLibraryForLaTeX
+=======================
 
-Версия 1.14
+Версия 1.23
 
-Библиотека для отображения различных данных в [QWebView](http://qt-project.org/doc/qt-5.0/qtwebkit/qwebview.html), включая графики.
+Библиотека для отображения различных данных в LaTeX файлах.
 
-[https://github.com/Harrix/HarrixQtLibraryForQWebView](https://github.com/Harrix/HarrixQtLibraryForQWebView)
+[https://github.com/Harrix/HarrixQtLibraryForLaTeX](https://github.com/Harrix/HarrixQtLibraryForLaTeX)
 
-Библиотека распространяется по лицензии [Apache License, Version 2.0](https://github.com/Harrix/HarrixQtLibraryForQWebView/blob/master/LICENSE.txt).
+Библиотека распространяется по лицензии [Apache License, Version 2.0](https://github.com/Harrix/HarrixQtLibraryForLaTeX/blob/master/LICENSE.txt).
 
 Установка
 ---------
 
-Подробно о установке с подробным примером можно прочитать тут [http://blog.harrix.org/?p=1196](http://blog.harrix.org/?p=1196).
+Подробно о установке с подробным примером можно прочитать тут [http://blog.harrix.org/?p=1164](http://blog.harrix.org/?p=1164).
 
 Функции для получения HTML кода для вывода в QWebView
 -----------------------------------------------------
