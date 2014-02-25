@@ -179,8 +179,6 @@ HarrixQtLibraryForLaTeX
 
 - Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
 
-        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
-
 
 - Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
  
