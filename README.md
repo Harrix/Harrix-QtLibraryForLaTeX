@@ -93,9 +93,11 @@ QString HQt_LatexShowAlert (QString String);
 
 ```cpp
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowNumber (T VMHL_X);
 ```
 
@@ -109,15 +111,20 @@ template <class T> QString THQt_LatexNumberToText (T VMHL_X);
 
 ```cpp
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
-
+```
+```cpp
 QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);
-
+```
+```cpp
 QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);
-
+```
+```cpp
 QString THQt_LatexShowVector (QStringList VMHL_Vector);
 ```
 
@@ -125,9 +132,11 @@ QString THQt_LatexShowVector (QStringList VMHL_Vector);
 
 ```cpp
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);
-
+```
+```cpp
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);
 ```
 
