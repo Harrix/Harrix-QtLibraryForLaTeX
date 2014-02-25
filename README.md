@@ -177,7 +177,9 @@ HarrixQtLibraryForLaTeX
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));
 
-Тут
+- Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+
+        template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
 
 
 - Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
