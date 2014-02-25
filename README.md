@@ -278,6 +278,13 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
 QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double));	
 ```
 
+#!ruby
+class Foo < Bar
+  def hello
+    puts "Hello World!"
+  end
+end
+
 Скриншоты применения функций
 ----------------------------
 
