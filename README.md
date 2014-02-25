@@ -177,7 +177,6 @@ HarrixQtLibraryForLaTeX
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);
         QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));
 
-
 - Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
  
         template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, bool ForNormalSize);
