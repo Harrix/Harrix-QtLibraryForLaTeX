@@ -17,6 +17,102 @@ HarrixQtLibraryForLaTeX
 Функции для получения LaTeX кода 
 --------------------------------
 
+- Возвращает начало для полноценного Latex файла.
+
+        QString HQt_LatexBegin();
+		
+- Возвращает начало для полноценного Latex файла с использованием графиков через пакет pgfplots.
+
+        QString HQt_LatexBeginWithPgfplots();
+
+- Возвращает начало для полноценного Latex файла в виде статьи.
+
+        QString HQt_LatexBeginArticle();
+
+- Возвращает начало для полноценного Latex файла в виде статьи с использованием графиков через пакет pgfplots.
+
+        QString HQt_LatexBeginArticleWithPgfplots();
+
+- Возвращает концовку для полноценного Latex файла.
+
+        QString HQt_LatexEnd();
+		
+- Функция переводит текст в текст, который можно добавить в Latex код.
+
+        QString HQt_TextToTextForLatex (QString Text)
+
+- Функция возвращает строку с выводом некоторой строки с Latex кодами.
+
+        QString HQt_LatexShowText (QString TitleX);
+
+- Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишевства.
+
+        QString HQt_LatexShowSimpleText (QString String);
+
+- Функция возвращает строку с выводом горизонтальной линии.
+
+        QString HQt_LatexShowHr ();
+
+- Функция возвращает строку с выводом некоторой строки в виде заголовка.
+
+        QString HQt_LatexShowSection (QString String);
+
+- Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
+
+        QString HQt_LatexShowSubsection (QString String);
+
+- Функция возвращает строку с выводом некоторого предупреждения.
+
+        QString HQt_LatexShowAlert (QString String);
+
+- Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+
+        template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);
+        template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);
+        template <class T> QString THQt_LatexShowNumber (T VMHL_X);
+		
+- Функция выводит число VMHL_X в строку Latex, причем число выделено жирным.
+
+        template <class T> QString THQt_LatexNumberToText (T VMHL_X);		
+		
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
+        template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);
+		QString THQt_LatexShowVector (QStringList VMHL_Vector);
+
+- Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
+
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);
+        template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);
+		
+- Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);
+        template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix);
+		QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);
+		
+- Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
+
+        QString HQt_LatexBeginCompositionFigure ();
+
+- Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+
+        QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label);
+        QString HQt_LatexEndCompositionFigure (QString TitleFigure);
+        QString HQt_LatexEndCompositionFigure ();
+
+- Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+        QString HQt_LatexBeginFigureInCompositionFigure ();
+
 		
 
 Скриншоты применения функций
