@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-[strong]Версия 1.23[/strong]
+<strong>Версия 1.23</strong>
 
 <del datetime="2014-02-26T18:52:03+00:00">Библиотека</del>
 
