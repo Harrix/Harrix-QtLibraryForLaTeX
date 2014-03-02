@@ -1,7 +1,7 @@
 HarrixQtLibraryForLaTeX
 =======================
 
-Версия 1.23
+Версия 1.24
 
 Библиотека для отображения различных данных в LaTeX файлах.
 
@@ -51,6 +51,12 @@ QString HQt_LatexEnd();
 
 ```
 QString HQt_TextToTextForLatex (QString Text);
+```
+
+- Функция расставляет принудительные переносы в стиле Latex.
+
+```
+QString HQt_ForcedWordWrap(QString S);
 ```
 
 - Функция возвращает строку с выводом некоторой строки с Latex кодами.

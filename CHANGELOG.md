@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.24
+----
+ * Добавлена функция HQt_ForcedWordWrap.
+
 1.23
 ----
  * Добавлена функция HQt_TextToTextForLatex.

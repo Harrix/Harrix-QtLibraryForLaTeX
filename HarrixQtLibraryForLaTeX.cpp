@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.23
+//Версия 1.24
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -992,6 +992,27 @@ QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N)
     VMHL_Result+="\\end{array}\\right).\n";
 
     VMHL_Result+="\\end{equation}\n\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_ForcedWordWrap(QString S)
+{
+    /*
+    Функция расставляет принудительные переносы в стиле Latex.
+    Входные параметры:
+     S - разбиваемая строка.
+    Возвращаемое значение:
+     Срока с расставленными принудительно переносами .
+    Примечание:
+     Перевод слов производится по алгоритму П. Хpистова в модификации Дымченко и Ваpсанофьева.
+    */
+    QStringList List;
+
+    List = HQt_CutToWordsWithWordWrap(S);
+
+    QString VMHL_Result = List.join("\\-");
 
     return VMHL_Result;
 }

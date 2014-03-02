@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.23
+//Версия 1.24
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -23,6 +23,7 @@ QString HQt_LatexBeginArticleWithPgfplots();//Возвращает начало 
 QString HQt_LatexEnd();//Возвращает концовку для полноценного Latex файла.
 
 QString HQt_TextToTextForLatex (QString Text);//Функция переводит текст в текст, который можно добавить в Latex код.
+QString HQt_ForcedWordWrap(QString S);//Функция расставляет принудительные переносы в стиле Latex.
 
 QString HQt_LatexShowText (QString TitleX);//Функция возвращает строку с выводом некоторой строки с Latex кодами.
 QString HQt_LatexShowSimpleText (QString String);//Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишества.
