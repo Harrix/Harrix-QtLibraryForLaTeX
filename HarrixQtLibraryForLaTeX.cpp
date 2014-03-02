@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.24
+//Версия 1.25
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -1013,6 +1013,8 @@ QString HQt_ForcedWordWrap(QString S)
     List = HQt_CutToWordsWithWordWrap(S);
 
     QString VMHL_Result = List.join("\\-");
+
+    VMHL_Result = VMHL_Result.replace("\\-\\\\-_", "\\_");
 
     return VMHL_Result;
 }

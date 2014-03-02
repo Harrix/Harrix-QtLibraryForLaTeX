@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.24
+//Версия 1.25
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
