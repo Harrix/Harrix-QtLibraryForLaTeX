@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.26
+----
+ * Добавлена функция в двух вариантах HQt_LatexShowTable.
+
 1.25
 ----
  * Исправлена функция HQt_ForcedWordWrap.

@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.25
+//Версия 1.26
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -60,6 +60,9 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure);//Функция в�
 QString HQt_LatexEndCompositionFigure ();//Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
 QString HQt_LatexBeginFigureInCompositionFigure ();//Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
 QString HQt_LatexEndFigureInCompositionFigure ();//Функция возвращает строку с Latex кодом после добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1, QString NameCol2, double WidthCol1, QString Title);//Функция возвращает строку с выводом таблицы с двумя столбцами.
+QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3, QString NameCol1, QString NameCol2, QString NameCol3, double WidthCol1, double WidthCol2, QString Title);//Функция возвращает строку с выводом таблицы с тремя столбцами.
 
 //ГРАФИКИ
 
