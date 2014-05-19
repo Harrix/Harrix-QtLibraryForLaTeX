@@ -10,7 +10,7 @@
 #include "HarrixQtLibrary.h"
 #include <math.h>
 
-enum TypeOf3DPlot { Plot3D_Points, Plot3D_Surface, Plot3D_SurfaceGrid, Plot3D_TopView};//тип 3D граифка в виде поверхности
+enum TypeOf3DPlot { Plot3D_Points, Plot3D_Surface, Plot3D_SurfaceGrid, Plot3D_TopView};//тип 3D графика в виде поверхности
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ОБЪЯВЛЕНИЯ ФУНКЦИЙ
