@@ -1055,7 +1055,7 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1
         VMHL_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" \\tabularnewline \\hline\n";
     }
 
-    VMHL_Result+="\\end{longtable}t\n";
+    VMHL_Result+="\\end{longtable}\n";
     VMHL_Result+="}\n";
     VMHL_Result+="\\end{center}\n\n";
 
