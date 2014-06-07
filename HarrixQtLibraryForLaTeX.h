@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.26
+//Версия 1.27
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -31,6 +31,8 @@ QString HQt_LatexShowHr ();//Функция возвращает строку с
 QString HQt_LatexShowSection (QString String);//Функция возвращает строку с выводом некоторой строки в виде заголовка.
 QString HQt_LatexShowSubsection (QString String);//Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
 QString HQt_LatexShowAlert (QString String);//Функция возвращает строку с выводом некоторого предупреждения.
+QString HQt_LatexRedText (QString String);//Функция возвращает строку с выводом красного текста.
+QString HQt_LatexGreenText (QString String);//Функция возвращает строку с выводом зеленого текста.
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
 template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
 template <class T> QString THQt_LatexShowNumber (T VMHL_X);//Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.

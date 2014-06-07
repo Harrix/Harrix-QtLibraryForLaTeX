@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.27
+----
+ * Добавлена функция в двух вариантах HQt_LatexRedText и HQt_LatexGreenText.
+
 1.26
 ----
  * Добавлена функция в двух вариантах HQt_LatexShowTable.

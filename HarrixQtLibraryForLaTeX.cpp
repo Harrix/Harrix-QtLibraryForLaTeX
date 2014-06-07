@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.26
+//Версия 1.27
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -199,6 +199,40 @@ QString HQt_LatexShowAlert (QString String)
     QString VMHL_Result;
 
     VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexRedText (QString String)
+{
+    /*
+    Функция возвращает строку с выводом красного текста.
+    Входные параметры:
+     String - непосредственно выводимая строка.
+    Возвращаемое значение:
+     Строка с Latex кодами с красным текстом.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+
+    return VMHL_Result;
+}
+//---------------------------------------------------------------------------
+
+QString HQt_LatexGreenText (QString String)
+{
+    /*
+    Функция возвращает строку с выводом зеленого текста.
+    Входные параметры:
+     String - непосредственно выводимая строка.
+    Возвращаемое значение:
+     Строка с Latex кодами с зеленым текстом.
+    */
+    QString VMHL_Result;
+
+    VMHL_Result="\n\n\\textcolor{garkgreen}{\\textbf{"+String+"}}\n\n";
 
     return VMHL_Result;
 }
