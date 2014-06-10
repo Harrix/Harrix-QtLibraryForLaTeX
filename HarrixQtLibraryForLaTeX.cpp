@@ -215,7 +215,7 @@ QString HQt_LatexRedText (QString String)
     */
     QString VMHL_Result;
 
-    VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+    VMHL_Result="\\textcolor{red}{\\textbf{"+String+"}}";
 
     return VMHL_Result;
 }
@@ -232,7 +232,7 @@ QString HQt_LatexGreenText (QString String)
     */
     QString VMHL_Result;
 
-    VMHL_Result="\n\n\\textcolor{garkgreen}{\\textbf{"+String+"}}\n\n";
+    VMHL_Result="\\textcolor{darkgreen}{\\textbf{"+String+"}}";
 
     return VMHL_Result;
 }
