@@ -45,7 +45,6 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));
-
 ```
 
 - Функция возвращает строку с Latex кодом отрисовки 3D поверхности по функции Function.
@@ -58,7 +57,6 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double));
 QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double));
-
 ```
 
 - Функция возвращает строку с выводом некоторого 3D графика в виде поверхности.
@@ -101,7 +99,6 @@ template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_Ve
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints);
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label);
 template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);
-
 ```
 
 - Функция возвращает строку с выводом графиков из матрицы по точкам с Latex кодами.
@@ -210,7 +207,6 @@ template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int
 QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix);
 QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix);
 QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);
-
 ```
 
 - Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
@@ -219,7 +215,6 @@ QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
 template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
-
 ```
 
 - Функция возвращает строку с выводом некоторого вектора VMH_Vector с Latex кодами.
@@ -228,7 +223,6 @@ template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
 QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);
 QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);
 QString THQt_LatexShowVector (QStringList VMHL_Vector);
-
 ```
 
 - Функция возвращает строку с выводом некоторого вектора VMHL_Vector в транспонированном виде с Latex кодами.
@@ -237,7 +231,6 @@ QString THQt_LatexShowVector (QStringList VMHL_Vector);
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);
 template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);
-
 ```
 
 Составные изображения
