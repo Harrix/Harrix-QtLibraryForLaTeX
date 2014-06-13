@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.28
+//Версия 1.29
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -967,10 +967,10 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1
     VMHL_Result+="\\begin{center}\n";
     VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
-    double width1 = 0.93*(WidthCol1/100.);
-    double width2 = 0.93*(1.-WidthCol1/100.);
+    double width1 = (WidthCol1/100.);
+    double width2 = (1.-WidthCol1/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{"+QString::number(width1)+"\\linewidth}|m{"+QString::number(width2)+"\\linewidth}|}\n";
+    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|}\n";
     VMHL_Result+="\\caption{"+Title+"}\n";
 
     VMHL_Result+="\\tabularnewline\\hline\n";
@@ -1012,11 +1012,11 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3
     VMHL_Result+="\\begin{center}\n";
     VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
-    double width1 = 0.93*(WidthCol1/100.);
-    double width2 = 0.93*(WidthCol2/100.);
-    double width3 = 0.93*(1.-WidthCol1/100.-WidthCol2/100.);
+    double width1 = (WidthCol1/100.);
+    double width2 = (WidthCol2/100.);
+    double width3 = (1.-WidthCol1/100.-WidthCol2/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{"+QString::number(width1)+"\\linewidth}|m{"+QString::number(width2)+"\\linewidth}|m{"+QString::number(width3)+"\\linewidth}|}\n";
+    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width3)+"\\linewidth-2\\tabcolsep}|}\n";
     VMHL_Result+="\\caption{"+Title+"}\n";
 
     VMHL_Result+="\\tabularnewline\\hline\n";
