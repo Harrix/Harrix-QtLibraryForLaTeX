@@ -1,0 +1,1 @@
+Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate с использованием графиков через пакет pgfplots.

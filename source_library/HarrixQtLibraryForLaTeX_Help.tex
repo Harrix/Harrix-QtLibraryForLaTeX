@@ -1,0 +1,1327 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{packages}
+\input{styles}
+
+\title{HarrixQtLibraryForLaTeX v.1.28}
+\author{А.\,Б. Сергиенко}
+\date{\today}
+
+
+\begin{document}
+
+\input{names}
+
+\maketitle
+
+\begin{abstract}
+Библиотека HarrixQtLibraryForLaTeX --- библиотека для отображения различных данных в LaTeX файлах.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\section{Введение}
+
+Библиотека HarrixQtLibraryForLaTeX --- это библиотека для отображения различных данных в LaTeX файлах.
+
+Последнюю версию документа можно найти по адресу:
+
+\href{https://github.com/Harrix/HarrixQtLibraryForLaTeX}{https://github.com/Harrix/HarrixQtLibraryForLaTeX}
+
+Об установке библиотеки можно прочитать тут:
+
+\href{http://blog.harrix.org/?p=1164}{http://blog.harrix.org/?p=1164}
+
+С автором можно связаться по адресу \href{mailto:sergienkoanton@mail.ru}{sergienkoanton@mail.ru} или  \href{http://vk.com/harrix}{http://vk.com/harrix}.
+
+Сайт автора, где публикуются последние новости: \href{http://blog.harrix.org/}{http://blog.harrix.org/}, а проекты располагаются по адресу \href{http://harrix.org/}{http://harrix.org/}.
+
+\newpage
+\section{Список функций}\label{section_listfunctions}
+\textbf{Главные загрузочные функции}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_LatexBegin]{HQt\_LatexBegin}} --- Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
+
+\item \textbf{\hyperref[HQt_LatexBeginArticle]{HQt\_LatexBeginArticle}} --- Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate.
+
+\item \textbf{\hyperref[HQt_LatexBeginArticleWithPgfplots]{HQt\_LatexBeginArticleWithPgfplots}} --- Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate с использованием графиков через пакет pgfplots.
+
+\item \textbf{\hyperref[HQt_LatexBeginWithPgfplots]{HQt\_LatexBeginWithPgfplots}} --- Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate с использованием графиков через пакет pgfplots.
+
+\item \textbf{\hyperref[HQt_LatexEnd]{HQt\_LatexEnd}} --- Возвращает концовку для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
+
+\end{enumerate}
+
+\textbf{Графики}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_LatexDrawLine]{HQt\_LatexDrawLine}} --- Функция возвращает строку с Latex кодом отрисовки линии по функции Function.
+
+\item \textbf{\hyperref[THQt_LatexDraw3DPlot]{THQt\_LatexDraw3DPlot}} --- Функция возвращает строку с Latex кодом отрисовки 3D поверхности по функции Function.
+
+\item \textbf{\hyperref[THQt_LatexShow3DPlot]{THQt\_LatexShow3DPlot}} --- Функция возвращает строку с выводом некоторого 3D графика в виде поверхности.
+
+\item \textbf{\hyperref[THQt_LatexShow3DPlotPoints]{THQt\_LatexShow3DPlotPoints}} --- Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
+
+\item \textbf{\hyperref[THQt_LatexShowBar]{THQt\_LatexShowBar}} --- Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowChartOfLine]{THQt\_LatexShowChartOfLine}} --- Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowChartsOfLineFromMatrix]{THQt\_LatexShowChartsOfLineFromMatrix}} --- Функция возвращает строку с выводом графиков из матрицы по точкам с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowIndependentChartsOfLineFromMatrix]{THQt\_LatexShowIndependentChartsOfLineFromMatrix}} --- Функция возвращает строку с выводом графиков из матрицы по точкам с Latex кодами. Нечетные столбцы --- это значения координат X графиков. Следующие за ними четные столбцы --- соответствующие значения Y. То есть графики друг от друга независимы.
+
+\item \textbf{\hyperref[THQt_LatexShowTwoChartsOfLine]{THQt\_LatexShowTwoChartsOfLine}} --- Функция возвращает строку с выводом некоторых двух графиков по точкам с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowTwoIndependentChartsOfLine]{THQt\_LatexShowTwoIndependentChartsOfLine}} --- Функция возвращает строку с выводом некоторых двух независимых графиков по точкам с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowTwoIndependentChartsOfPointsAndLine]{THQt\_LatexShowTwoIndependentChartsOfPointsAndLine}} --- Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Один график выводится в виде точек, а второй в виде линии. Удобно для отображения регрессий.
+
+\end{enumerate}
+
+\textbf{Обработка текста}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_ForcedWordWrap]{HQt\_ForcedWordWrap}} --- Функция расставляет принудительные переносы в стиле Latex.
+
+\item \textbf{\hyperref[HQt_LatexGreenText]{HQt\_LatexGreenText}} --- Функция возвращает строку с выводом зеленого текста.
+
+\item \textbf{\hyperref[HQt_LatexRedText]{HQt\_LatexRedText}} --- Функция возвращает строку с выводом красного текста.
+
+\item \textbf{\hyperref[HQt_TextToTextForLatex]{HQt\_TextToTextForLatex}} --- Функция переводит текст в текст, который можно добавить в Latex код. В-первую очередь, это экранирование некоторых элементов.
+
+\item \textbf{\hyperref[THQt_LatexNumberToText]{THQt\_LatexNumberToText}} --- Функция выводит число VMHL\_X в строку Latex, причем число выделено жирным.
+
+\end{enumerate}
+
+\textbf{Показ математических выражений}
+\begin{enumerate}
+
+\item \textbf{\hyperref[THQt_LatexShowMatrix]{THQt\_LatexShowMatrix}} --- Функция возвращает строку с выводом некоторой матрицы VMHL\_Matrix с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowMatrix2]{THQt\_LatexShowMatrix2}} --- Функция возвращает строку с выводом некоторой матрицы VMHL\_Matrix с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowVector]{THQt\_LatexShowVector}} --- Функция возвращает строку с выводом некоторого вектора VMHL\_Vector с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowVector2]{THQt\_LatexShowVector2}} --- Функция возвращает строку с выводом некоторого вектора VMH\_Vector с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowVectorT]{THQt\_LatexShowVectorT}} --- Функция возвращает строку с выводом некоторого вектора VMHL\_Vector в транспонированном виде с Latex кодами.
+
+\end{enumerate}
+
+\textbf{Составные изображения}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_LatexBeginCompositionFigure]{HQt\_LatexBeginCompositionFigure}} --- Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
+
+\item \textbf{\hyperref[HQt_LatexBeginFigureInCompositionFigure]{HQt\_LatexBeginFigureInCompositionFigure}} --- Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+\item \textbf{\hyperref[HQt_LatexEndCompositionFigure]{HQt\_LatexEndCompositionFigure}} --- Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+
+\item \textbf{\hyperref[HQt_LatexEndFigureInCompositionFigure]{HQt\_LatexEndFigureInCompositionFigure}} --- Функция возвращает строку с Latex кодом после добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+\end{enumerate}
+
+\textbf{Таблицы}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_LatexShowTable]{HQt\_LatexShowTable}} --- Функция возвращает строку с выводом таблицы.
+
+\end{enumerate}
+
+\textbf{Текст}
+\begin{enumerate}
+
+\item \textbf{\hyperref[HQt_LatexShowAlert]{HQt\_LatexShowAlert}} --- Функция возвращает строку с выводом некоторого предупреждения.
+
+\item \textbf{\hyperref[HQt_LatexShowHr]{HQt\_LatexShowHr}} --- Функция возвращает строку с выводом горизонтальной линии.
+
+\item \textbf{\hyperref[HQt_LatexShowSection]{HQt\_LatexShowSection}} --- Функция возвращает строку с выводом некоторой строки в виде заголовка.
+
+\item \textbf{\hyperref[HQt_LatexShowSimpleText]{HQt\_LatexShowSimpleText}} --- Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишества.
+
+\item \textbf{\hyperref[HQt_LatexShowSubsection]{HQt\_LatexShowSubsection}} --- Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
+
+\item \textbf{\hyperref[HQt_LatexShowText]{HQt\_LatexShowText}} --- Функция возвращает строку с выводом некоторой строки с Latex кодами.
+
+\item \textbf{\hyperref[THQt_LatexShowNumber]{THQt\_LatexShowNumber}} --- Функция возвращает строку с выводом некоторого числа VMHL\_X с Latex кодами.
+
+\end{enumerate}
+
+
+\newpage
+\section{Функции}
+\subsection{Главные загрузочные функции}
+
+\subsubsection{HQt\_LatexBegin}\label{HQt_LatexBegin}
+
+Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBegin,caption=Синтаксис]
+QString HQt_LatexBegin();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Начало для полноценного Latex файла.
+
+
+\subsubsection{HQt\_LatexBeginArticle}\label{HQt_LatexBeginArticle}
+
+Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBeginArticle,caption=Синтаксис]
+QString HQt_LatexBeginArticle();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Начало для полноценного Latex файла в виде статьи.
+
+
+\subsubsection{HQt\_LatexBeginArticleWithPgfplots}\label{HQt_LatexBeginArticleWithPgfplots}
+
+Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate с использованием графиков через пакет pgfplots.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBeginArticleWithPgfplots,caption=Синтаксис]
+QString HQt_LatexBeginArticleWithPgfplots();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Начало для полноценного Latex файла в виде статьи с использованием графиков через пакет pgfplots.
+
+
+\subsubsection{HQt\_LatexBeginWithPgfplots}\label{HQt_LatexBeginWithPgfplots}
+
+Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate с использованием графиков через пакет pgfplots.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBeginWithPgfplots,caption=Синтаксис]
+QString HQt_LatexBeginWithPgfplots();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Начало для полноценного Latex файла с использованием графиков через пакет pgfplots.
+
+
+\subsubsection{HQt\_LatexEnd}\label{HQt_LatexEnd}
+
+Возвращает концовку для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexEnd,caption=Синтаксис]
+QString HQt_LatexEnd();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Концовка для полноценного Latex файла.
+
+
+\subsection{Графики}
+
+\subsubsection{HQt\_LatexDrawLine}\label{HQt_LatexDrawLine}
+
+Функция возвращает строку с Latex кодом отрисовки линии по функции Function.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexDrawLine,caption=Синтаксис]
+QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
+QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
+QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine);
+QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double));
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    Left --- левая граница области;
+ 
+    Right --- правая граница области;
+ 
+    h --- шаг, с которым надо рисовать график;
+ 
+    Function --- указатель на вычисляемую функцию;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine --- название первого графика (для легенды);
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    RedLine --- рисовать ли красную линию, или синюю.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодом.
+
+
+\subsubsection{THQt\_LatexDraw3DPlot}\label{THQt_LatexDraw3DPlot}
+
+Функция возвращает строку с Latex кодом отрисовки 3D поверхности по функции Function.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexDraw3DPlot,caption=Синтаксис]
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, double Opacity, double AngleHorizontal, double AngleVertical, bool ColorBar, bool ForNormalSize);
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar, bool ForNormalSize);
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar);
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type);
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);
+QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double));
+QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double));
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Left\_X --- левая граница по оси Ox;
+ 
+    Right\_X --- правая граница по оси Ox;
+ 
+    Left\_Y --- левая граница по оси Oy;
+ 
+    Right\_Y --- правая граница по оси Oy;
+ 
+    N --- сколько нужно построить точек по каждой оси. В итоге получим N*N точек;
+ 
+    Function --- ссылка на отрисовываемую двумерную функцию;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameVectorZ --- название оси Oz. В формате: [обозначение], [расшифровка]. Например: z, Вероятность;
+ 
+    Label --- label для графика;
+ 
+    ColorMap --- какой раскраски будет график. Возможны значения: mathcad, matlab, hot или тот, что вы хотите использовать. Рекомендуется mathcad;
+ 
+    Type --- тип графика. Возможные значения:
+ 
+       Plot3D\_Points --- в виде точек,
+ 
+       Plot3D\_Surface --- в виде поверхности с непрерывной заливкой,
+ 
+       Plot3D\_SurfaceGrid --- в виде поверхности с сеточной заливкой,
+ 
+       Plot3D\_TopView --- вид сверху;
+ 
+    Opacity --- прозрачность графика. Может изменяться от 0 до 1;
+ 
+    AngleHorizontal --- угол поворота графика по горизонтали в градусах от ---180 до 180. Рекомендуется 25;
+ 
+    AngleVertical --- угол поворота графика по вертикали в градусах от ---180 до 180. Рекомендуется 30;
+ 
+    ColorBar --- рисовать с графиком колонку с градациями цветов или нет;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину), или для маленького размера график создается.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодом.
+
+
+\subsubsection{THQt\_LatexShow3DPlot}\label{THQt_LatexShow3DPlot}
+
+Функция возвращает строку с выводом некоторого 3D графика в виде поверхности.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShow3DPlot,caption=Синтаксис]
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, double Opacity, double AngleHorizontal, double AngleVertical, bool ColorBar, bool ForNormalSize);
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar, bool ForNormalSize);
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar);
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type);
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);
+template <class T> QString THQt_LatexShow3DPlot (T *VMHL_VectorX, T *VMHL_VectorY, T **VMHL_VectorZ,  int VMHL_N,  int VMHL_M);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+
+ 
+    VMHL\_VectorX --- указатель на вектор значений координат X сетки точек. Количество элементов VMHL\_N;
+ 
+    VMHL\_VectorY --- указатель на вектор значений координат Y сетки точек. Количество элементов VMHL\_M;
+ 
+    VMHL\_VectorZ --- указатель на матрицу значений координат Z точек. Количество элементов VMHL\_NxVMHL\_M;
+ 
+    VMHL\_N --- количество значений в сетке по оси Ox;
+ 
+    VMHL\_M --- количество значений в сетке по оси Oy;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameVectorZ --- название оси Oz. В формате: [обозначение], [расшифровка]. Например: z, Вероятность;
+ 
+    Label --- label для графика;
+ 
+    ColorMap --- какой раскраски будет график. Возможны значения: mathcad, matlab, hot или тот, что вы хотите использовать. Рекомендуется mathcad;
+ 
+    Type --- тип графика. Возможные значения:
+ 
+       Plot3D\_Points --- в виде точек,
+ 
+       Plot3D\_Surface --- в виде поверхности с непрерывной заливкой,
+ 
+       Plot3D\_SurfaceGrid --- в виде поверхности с сеточной заливкой,
+ 
+       Plot3D\_TopView --- вид сверху;
+ 
+    Opacity --- прозначность графика. Может изменяться от 0 до 1;
+ 
+    AngleHorizontal --- угол поворота графика по горизонтали в градусах от ---180 до 180. Рекомендуется 25;
+ 
+    AngleVertical --- угол поворота графика по вертикали в градусах от ---180 до 180. Рекомендуется 30;
+ 
+    ColorBar --- рисоватm с графиком колонку с градациями цветов или нет;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину), или для маленького размера график создается.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShow3DPlotPoints}\label{THQt_LatexShow3DPlotPoints}
+
+Функция возвращает строку с выводом некоторого 3D графика в виде множества точек.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShow3DPlotPoints,caption=Синтаксис]
+template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, bool ForNormalSize);
+template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, bool ForNormalSize);
+template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label);
+template <class T> QString THQt_LatexShow3DPlotPoints (T *VMHL_VectorX, T *VMHL_VectorY, T *VMHL_VectorZ,  int VMHL_N);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+
+VMHL\_VectorX --- указатель на вектор координат X точек;
+ 
+    VMHL\_VectorY --- указатель на вектор координат Y точек;
+ 
+    VMHL\_VectorZ --- указатель на вектор координат Z точек;
+ 
+    VMHL\_N --- количество точек;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameVectorZ --- название оси Oz. В формате: [обозначение], [расшифровка]. Например: z, Вероятность;
+ 
+    Label --- label для графика;
+ 
+    ColorMap --- какой раскраски будет график. Возможны значения: mathcad, matlab, hot или тот, что вы хотите использовать. Рекомендуется mathcad.
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину), или для маленького размера график создается.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowBar}\label{THQt_LatexShowBar}
+
+Функция возвращает строку с выводом некоторого графика гистограммы с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowBar,caption=Синтаксис]
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QString *NameVectorX, QString NameVectorY, QString Label);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize, bool MinZero);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label, bool ForNormalSize);
+template <class T> QString THQt_LatexShowBar (T *VMHL_Vector, int VMHL_N, QString TitleChart, QStringList NameVectorX, QString NameVectorY, QString Label);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_Vector --- указатель на вектор значений точек;
+ 
+    VMHL\_N --- количество точек;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название значений точек. Будут подписаны под каждым столбиком на оси Ox. Количество элементов VMHL\_N;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    Label --- label для графика;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину), или для маленького размера график создается;
+ 
+    MinZero --- гистограмму начинать с нуля (true) или с минимального значения среди VMHL\_Vector (false).
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowChartOfLine}\label{THQt_LatexShowChartOfLine}
+
+Функция возвращает строку с выводом некоторого графика по точкам с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowChartOfLine,caption=Синтаксис]
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine, bool ForNormalSize);
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine);
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine, QString Label);
+template <class T> QString THQt_LatexShowChartOfLine (T *VMHL_VectorX,T *VMHL_VectorY, int VMHL_N);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+    VMHL\_VectorX --- указатель на вектор координат X точек;
+ 
+    VMHL\_VectorY --- указатель на вектор координат Y точек;
+ 
+    VMHL\_N --- количество точек;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine --- название первого графика (для легенды);
+ 
+    Label --- label для графика
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    RedLine --- рисовать ли красную линию, или синюю;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину), или для маленького размера график создается.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowChartsOfLineFromMatrix}\label{THQt_LatexShowChartsOfLineFromMatrix}
+
+Функция возвращает строку с выводом графиков из матрицы по точкам с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowChartsOfLineFromMatrix,caption=Синтаксис]
+template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle, bool SolidStyle, bool CircleStyle);
+template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label);
+template <class T> QString THQt_LatexShowChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+VMHL\_MatrixXY --- указатель на матрицу значений X и Y графиков;
+ 
+    VMHL\_N --- количество точек;
+ 
+    VMHL\_M --- количество столбцов матрицы (1+количество графиков);
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine --- указатель на вектор названий графиков (для легенды) количество элементов VMHL\_M---1 (так как первый столбец --- это X значения);
+ 
+    Label --- label для графика;
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину) или для маленького размера график создается;
+ 
+    GrayStyle --- серый стиль графиков;
+ 
+    SolidStyle --- линии делать сплошными или разными по типу (точками, тире и др.);
+ 
+    CircleStyle --- точки все делать кругляшками или нет.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowIndependentChartsOfLineFromMatrix}\label{THQt_LatexShowIndependentChartsOfLineFromMatrix}
+
+Функция возвращает строку с выводом графиков из матрицы по точкам с Latex кодами. Нечетные столбцы --- это значения координат X графиков. Следующие за ними четные столбцы --- соответствующие значения Y. То есть графики друг от друга независимы.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowIndependentChartsOfLineFromMatrix,caption=Синтаксис]
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int *VMHL_N_EveryCol,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle, bool SolidStyle, bool CircleStyle);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int *VMHL_N_EveryCol,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int *VMHL_N_EveryCol,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int *VMHL_N_EveryCol,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int *VMHL_N_EveryCol,int VMHL_M);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle, bool SolidStyle, bool CircleStyle);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M, QString TitleChart, QString NameVectorX, QString NameVectorY,QString *NameLine, QString Label);
+template <class T> QString THQt_LatexShowIndependentChartsOfLineFromMatrix (T **VMHL_MatrixXY,int VMHL_N,int VMHL_M);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+VMHL\_MatrixXY --- указатель на матрицу значений X и Y графиков;
+ 
+VMHL\_N\_EveryCol --- количество элементов в каждом столбце (так как столбцы идут по парам, то число элементов в нечетном и
+ 
+следующем за ним четном столбце должны совпадать, например 10,10,5,5,7,7);
+ 
+VMHL\_M --- количество столбцов матрицы (должно быть четным числом конечно);
+ 
+TitleChart --- заголовок графика;
+ 
+NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+NameLine --- указатель на вектор названий графиков (для легенды) количество элементов VMHL\_M/2;
+ 
+Label --- label для графика;
+ 
+ShowLine --- показывать ли линию;
+ 
+ShowPoints --- показывать ли точки;
+ 
+ShowArea --- показывать ли закрашенную область под кривой;
+ 
+ShowSpecPoints --- показывать ли специальные точки;
+ 
+ForNormalSize --- нормальный размер графика (на всю ширину) или для маленького размера график создается;
+ 
+GrayStyle --- серый стиль графиков;
+ 
+SolidStyle --- линии делать сплошными или разными по типу (точками, тире и др.);
+ 
+CircleStyle --- точки все делать кругляшками или нет.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowTwoChartsOfLine}\label{THQt_LatexShowTwoChartsOfLine}
+
+Функция возвращает строку с выводом некоторых двух графиков по точкам с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowTwoChartsOfLine,caption=Синтаксис]
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle);
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);
+template <class T> QString THQt_LatexShowTwoChartsOfLine (T *VMHL_VectorX,T *VMHL_VectorY1,T *VMHL_VectorY2, int VMHL_N);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_VectorX --- указатель на вектор координат X точек;
+ 
+    VMHL\_VectorY1 --- указатель на вектор координат Y точек первой линии;
+ 
+    VMHL\_VectorY2 --- указатель на вектор координат Y точек второй линии;
+ 
+    VMHL\_N --- количество точек;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine1 --- название первого графика (для легенды);
+ 
+    NameLine2 --- название второго графика (для легенды);
+ 
+    Label --- label для графика;
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину) или для маленького размера график создается;
+ 
+    GrayStyle --- второй график рисовать серым, а не красным.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowTwoIndependentChartsOfLine}\label{THQt_LatexShowTwoIndependentChartsOfLine}
+
+Функция возвращает строку с выводом некоторых двух независимых графиков по точкам с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowTwoIndependentChartsOfLine,caption=Синтаксис]
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label, bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_VectorX1 --- указатель на вектор координат X точек первой линии;
+ 
+    VMHL\_VectorY1 --- указатель на вектор координат Y точек первой линии;
+ 
+    VMHL\_N1 --- количество точек первой линии;
+ 
+    VMHL\_VectorX2 --- указатель на вектор координат X точек второй линии;
+ 
+    VMHL\_VectorY2 --- указатель на вектор координат Y точек второй линии;
+ 
+    VMHL\_N2 --- количество точек второй линии;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine1 --- название первого графика (для легенды);
+ 
+    NameLine2 --- название второго графика (для легенды);
+ 
+    Label --- label для графика;
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину) или для маленького размера график создается;
+ 
+    GrayStyle --- второй график рисовать серым, а не красным.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsubsection{THQt\_LatexShowTwoIndependentChartsOfPointsAndLine}\label{THQt_LatexShowTwoIndependentChartsOfPointsAndLine}
+
+Функция возвращает строку с выводом некоторого двух независимых графиков по точкам с Latex кодами. Один график выводится в виде точек, а второй в виде линии. Удобно для отображения регрессий.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowTwoIndependentChartsOfPointsAndLine,caption=Синтаксис]
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize, bool GrayStyle);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints, bool ForNormalSize);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label,bool ShowLine,bool ShowPoints,bool ShowArea,bool ShowSpecPoints);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2, QString TitleChart, QString NameVectorX, QString NameVectorY,QString NameLine1, QString NameLine2, QString Label);
+template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T *VMHL_VectorX1,T *VMHL_VectorY1,int VMHL_N1,T *VMHL_VectorX2,T *VMHL_VectorY2, int VMHL_N2);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_VectorX1 --- указатель на вектор координат X точек первой линии;
+ 
+    VMHL\_VectorY1 --- указатель на вектор координат Y точек первой линии;
+ 
+    VMHL\_N1 --- количество точек первой линии;
+ 
+    VMHL\_VectorX2 --- указатель на вектор координат X точек второй линии;
+ 
+    VMHL\_VectorY2 --- указатель на вектор координат Y точек второй линии;
+ 
+    VMHL\_N2 --- количество точек второй линии;
+ 
+    TitleChart --- заголовок графика;
+ 
+    NameVectorX --- название оси Ox. В формате: [обозначение], [расшифровка]. Например: u, Вероятность выбора;
+ 
+    NameVectorY --- название оси Oy. В формате: [обозначение], [расшифровка]. Например: q, Количество абрикосов;
+ 
+    NameLine1 --- название первого графика (для легенды);
+ 
+    NameLine2 --- название второго графика (для легенды);
+ 
+    Label --- label для графика;
+ 
+    ShowLine --- показывать ли линию;
+ 
+    ShowPoints --- показывать ли точки;
+ 
+    ShowArea --- показывать ли закрашенную область под кривой;
+ 
+    ShowSpecPoints --- показывать ли специальные точки;
+ 
+    ForNormalSize --- нормальный размер графика (на всю ширину) или для маленького размера график создается;
+ 
+    GrayStyle --- второй график рисовать серым, а не красным.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым графиком.
+
+
+\subsection{Обработка текста}
+
+\subsubsection{HQt\_ForcedWordWrap}\label{HQt_ForcedWordWrap}
+
+Функция расставляет принудительные переносы в стиле Latex.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_ForcedWordWrap,caption=Синтаксис]
+QString HQt_ForcedWordWrap(QString S);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+S --- разбиваемая строка.
+
+\textbf{Возвращаемое значение:}
+
+ Срока с расставленными принудительно переносами.
+
+
+\subsubsection{HQt\_LatexGreenText}\label{HQt_LatexGreenText}
+
+Функция возвращает строку с выводом зеленого текста.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexGreenText,caption=Синтаксис]
+QString HQt_LatexGreenText (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с зеленым текстом.
+
+
+\subsubsection{HQt\_LatexRedText}\label{HQt_LatexRedText}
+
+Функция возвращает строку с выводом красного текста.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexRedText,caption=Синтаксис]
+QString HQt_LatexRedText (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с красным текстом.
+
+
+\subsubsection{HQt\_TextToTextForLatex}\label{HQt_TextToTextForLatex}
+
+Функция переводит текст в текст, который можно добавить в Latex код. В-первую очередь, это экранирование некоторых элементов.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_TextToTextForLatex,caption=Синтаксис]
+QString HQt_TextToTextForLatex (QString Text);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+TitleX --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Измененный текст, который можно добавлять в LaTeX.
+
+
+\subsubsection{THQt\_LatexNumberToText}\label{THQt_LatexNumberToText}
+
+Функция выводит число VMHL\_X в строку Latex, причем число выделено жирным.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexNumberToText,caption=Синтаксис]
+template <class T> QString THQt_LatexNumberToText (T VMHL_X);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+VMHL\_X --- выводимое число.
+
+\textbf{Возвращаемое значение:}
+
+Строка, в которой записано число.
+
+
+\subsection{Показ математических выражений}
+
+\subsubsection{THQt\_LatexShowMatrix}\label{THQt_LatexShowMatrix}
+
+Функция возвращает строку с выводом некоторой матрицы VMHL\_Matrix с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowMatrix,caption=Синтаксис]
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString TitleMatrix, QString NameMatrix);
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M, QString NameMatrix);
+template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int VMHL_M);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+
+VMHL\_Matrix --- указатель на выводимую матрицу;
+ 
+    VMHL\_N --- количество строк в матрице;
+ 
+    VMHL\_M --- количество столбцов в матрице;
+ 
+    TitleMatrix --- заголовок выводимой матрицы;
+ 
+    NameMatrix --- обозначение матрицы.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой матрицей.
+
+
+\subsubsection{THQt\_LatexShowMatrix2}\label{THQt_LatexShowMatrix2}
+
+Функция возвращает строку с выводом некоторой матрицы VMHL\_Matrix с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowMatrix2,caption=Синтаксис]
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix);
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix);
+QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+    VMHL\_Matrix --- указатель на выводимую матрицу;
+ 
+    VMHL\_N --- количество строк в матрице;
+ 
+    TitleMatrix --- заголовок выводимой матрицы;
+ 
+    NameMatrix --- обозначение матрицы.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой матрицей.
+
+
+\subsubsection{THQt\_LatexShowVector}\label{THQt_LatexShowVector}
+
+Функция возвращает строку с выводом некоторого вектора VMHL\_Vector с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowVector,caption=Синтаксис]
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N, QString NameVector);
+template <class T> QString THQt_LatexShowVector (T *VMHL_Vector, int VMHL_N);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_Vector --- указатель на выводимый вектор;
+ 
+    VMHL\_N --- количество элементов вектора;
+ 
+    TitleVector --- заголовок выводимого вектора;
+ 
+    NameVector --- обозначение вектора.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым вектором.
+
+
+\subsubsection{THQt\_LatexShowVector2}\label{THQt_LatexShowVector2}
+
+Функция возвращает строку с выводом некоторого вектора VMH\_Vector с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowVector2,caption=Синтаксис]
+QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector);
+QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector);
+QString THQt_LatexShowVector (QStringList VMHL_Vector);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_Vector --- указатель на выводимый вектор;
+ 
+    TitleVector --- заголовок выводимого вектора;
+ 
+    NameVector --- обозначение вектора.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым вектором.
+
+
+\subsubsection{THQt\_LatexShowVectorT}\label{THQt_LatexShowVectorT}
+
+Функция возвращает строку с выводом некоторого вектора VMHL\_Vector в транспонированном виде с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowVectorT,caption=Синтаксис]
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString TitleVector, QString NameVector);
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N, QString NameVector);
+template <class T> QString THQt_LatexShowVectorT (T *VMHL_Vector, int VMHL_N);
+
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_Vector --- указатель на выводимый вектор;
+ 
+    VMHL\_N --- количество элементов вектора;
+ 
+    TitleVector --- заголовок выводимого вектора;
+ 
+    NameVector --- обозначение вектора.
+	
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым вектором.
+
+
+\subsection{Составные изображения}
+
+\subsubsection{HQt\_LatexBeginCompositionFigure}\label{HQt_LatexBeginCompositionFigure}
+
+Функция возвращает строку с выводом начала рисунка, состоящего из нескольких рисунков или графиков.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBeginCompositionFigure,caption=Синтаксис]
+QString HQt_LatexBeginCompositionFigure ();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами.
+
+
+\begin{lstlisting}[label=code_use_HQt_LatexBeginCompositionFigure,caption=Пример использования]
+Latex += HQt_LatexBeginCompositionFigure ();
+Latex += HQt_LatexBeginFigureInCompositionFigure ();
+Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+Latex += HQt_LatexEndFigureInCompositionFigure ();
+Latex += HQt_LatexBeginFigureInCompositionFigure ();
+Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+Latex += HQt_LatexEndFigureInCompositionFigure ();
+Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
+\end{lstlisting}
+
+\subsubsection{HQt\_LatexBeginFigureInCompositionFigure}\label{HQt_LatexBeginFigureInCompositionFigure}
+
+Функция возвращает строку с Latex кодом при добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexBeginFigureInCompositionFigure,caption=Синтаксис]
+QString HQt_LatexBeginFigureInCompositionFigure ();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами.
+
+
+\subsubsection{HQt\_LatexEndCompositionFigure}\label{HQt_LatexEndCompositionFigure}
+
+Функция возвращает строку с выводом окончания рисунка, состоящего из нескольких рисунков или графиков.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexEndCompositionFigure,caption=Синтаксис]
+QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label);
+QString HQt_LatexEndCompositionFigure (QString TitleFigure);
+QString HQt_LatexEndCompositionFigure ();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+TitleFigure --- заголовок рисунка;
+
+     Label --- label для рисунка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами.
+
+
+\begin{lstlisting}[label=code_use_HQt_LatexEndCompositionFigure,caption=Пример использования]
+Latex += HQt_LatexBeginCompositionFigure ();
+Latex += HQt_LatexBeginFigureInCompositionFigure ();
+Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot1",true,true,true,true,false,false);
+Latex += HQt_LatexEndFigureInCompositionFigure ();
+Latex += HQt_LatexBeginFigureInCompositionFigure ();
+Latex += THQt_LatexShowChartOfLine (dataX,dataY,N,"Тестовый график","u, Вероятность выбора","q, Количество воронов","линия","plot2",true,true,true,true,false,false);
+Latex += HQt_LatexEndFigureInCompositionFigure ();
+Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
+\end{lstlisting}
+
+\subsubsection{HQt\_LatexEndFigureInCompositionFigure}\label{HQt_LatexEndFigureInCompositionFigure}
+
+Функция возвращает строку с Latex кодом после добавлении дополнительного рисунка или графика в рисунок, состоящего из нескольких рисунков.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexEndFigureInCompositionFigure,caption=Синтаксис]
+QString HQt_LatexEndFigureInCompositionFigure ();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствует.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами.
+
+
+\subsection{Таблицы}
+
+\subsubsection{HQt\_LatexShowTable}\label{HQt_LatexShowTable}
+
+Функция возвращает строку с выводом таблицы.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowTable,caption=Синтаксис]
+QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1, QString NameCol2, double WidthCol1, QString Title);
+QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3, QString NameCol1, QString NameCol2, QString NameCol3, double WidthCol1, double WidthCol2, QString Title);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    Col1 --- список строк первого столбца;
+ 
+    Col2 --- список строк второго столбца;
+ 
+    NameCol1--- заголовок первого столбца;
+ 
+    NameCol2--- заголовок второго столбца;
+ 
+    WidthCol1 --- ширина первого столбца в процентах, например 50%;
+ 
+    Title --- заголовок таблицы.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой таблицы.
+
+
+\subsection{Текст}
+
+\subsubsection{HQt\_LatexShowAlert}\label{HQt_LatexShowAlert}
+
+Функция возвращает строку с выводом некоторого предупреждения.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowAlert,caption=Синтаксис]
+QString HQt_LatexShowAlert (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым предупреждением.
+
+
+\subsubsection{HQt\_LatexShowHr}\label{HQt_LatexShowHr}
+
+Функция возвращает строку с выводом горизонтальной линии.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowHr,caption=Синтаксис]
+QString HQt_LatexShowHr ();
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+Отсутствуют.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с тэгом горизонтальной линии.
+
+
+\subsubsection{HQt\_LatexShowSection}\label{HQt_LatexShowSection}
+
+Функция возвращает строку с выводом некоторой строки в виде заголовка.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowSection,caption=Синтаксис]
+QString HQt_LatexShowSection (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой строкой.
+
+
+\subsubsection{HQt\_LatexShowSimpleText}\label{HQt_LatexShowSimpleText}
+
+Функция возвращает строку с выводом некоторой строки с Latex кодами без всякого излишества.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowSimpleText,caption=Синтаксис]
+QString HQt_LatexShowSimpleText (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой строкой.
+
+
+\subsubsection{HQt\_LatexShowSubsection}\label{HQt_LatexShowSubsection}
+
+Функция возвращает строку с выводом некоторой строки в виде подзаголовка.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowSubsection,caption=Синтаксис]
+QString HQt_LatexShowSubsection (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой строкой.
+
+
+\subsubsection{HQt\_LatexShowText}\label{HQt_LatexShowText}
+
+Функция возвращает строку с выводом некоторой строки с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_LatexShowText,caption=Синтаксис]
+QString HQt_LatexShowText (QString TitleX);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+TitleX --- непосредственно выводимая строка.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимой строкой (в виде абзаца).
+
+
+\subsubsection{THQt\_LatexShowNumber}\label{THQt_LatexShowNumber}
+
+Функция возвращает строку с выводом некоторого числа VMHL\_X с Latex кодами.
+
+
+\begin{lstlisting}[label=code_syntax_THQt_LatexShowNumber,caption=Синтаксис]
+template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);
+template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);
+template <class T> QString THQt_LatexShowNumber (T VMHL_X);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+ 
+    VMHL\_X --- выводимое число;
+ 
+    TitleX --- заголовок выводимого числа;
+ 
+    NameX --- обозначение числа.
+
+\textbf{Возвращаемое значение:}
+
+Строка с Latex кодами с выводимым числом.
+
+\end{document}
