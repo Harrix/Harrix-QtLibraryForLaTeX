@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.31
+//Версия 1.32
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -546,7 +546,7 @@ QString HQt_TextForLatexToText (QString String)
     */
     QString VMHL_Result;
 
-    VMHL_Result=String.replace("\\_","_").replace("$","").replace("\\~","~").replace("\\#","#");
+    VMHL_Result=String.replace("\\_","_").replace("$","").replace("$\\sim$","~").replace("\\#","#");
 
     return VMHL_Result;
 }
@@ -563,7 +563,7 @@ QString HQt_TextToTextForLatex (QString Text)
      Измененный текст, который можно добавлять в LaTeX.
     */
 
-    Text = Text.replace("_", "\\_").replace("#", "\\#").replace("~", "\\~");
+    Text = Text.replace("_", "\\_").replace("#", "\\#").replace("~", "$\\sim$");
 
     return Text;
 }

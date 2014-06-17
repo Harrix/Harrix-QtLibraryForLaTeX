@@ -9,7 +9,7 @@ QString HQt_TextToTextForLatex (QString Text)
      Измененный текст, который можно добавлять в LaTeX.
     */
 
-    Text = Text.replace("_", "\\_").replace("#", "\\#").replace("~", "\\~");
+    Text = Text.replace("_", "\\_").replace("#", "\\#").replace("~", "$\\sim$");
 
     return Text;
 }
