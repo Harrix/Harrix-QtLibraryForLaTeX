@@ -176,6 +176,12 @@ QString HQt_LatexGreenText (QString String);
 QString HQt_LatexRedText (QString String);
 ```
 
+- Функция обрабатывает строку String из переделки функции HQt_TextToTextForLatex в нормальную строку. Еще удаляются знаки \, которые обрамляют формулы.
+
+```cpp
+QString HQt_TextForLatexToText (QString String);
+```
+
 - Функция переводит текст в текст, который можно добавить в Latex код. В-первую очередь, это экранирование некоторых элементов.
 
 ```cpp

@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.30
+//Версия 1.31
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -92,6 +92,7 @@ template <class T> QString THQt_LatexShowTwoIndependentChartsOfPointsAndLine (T 
 QString HQt_ForcedWordWrap(QString S);
 QString HQt_LatexGreenText (QString String);
 QString HQt_LatexRedText (QString String);
+QString HQt_TextForLatexToText (QString String);
 QString HQt_TextToTextForLatex (QString Text);
 template <class T> QString THQt_LatexNumberToText (T VMHL_X);
 
@@ -5166,4 +5167,5 @@ template <class T> QString THQt_LatexShowNumber (T VMHL_X)
     return VMHL_Result;
 }
 //---------------------------------------------------------------------------
+
 #endif // HARRIXQTLIBRARYFORLATEX_H

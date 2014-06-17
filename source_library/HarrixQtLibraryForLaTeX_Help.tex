@@ -3,7 +3,7 @@
 \input{packages}
 \input{styles}
 
-\title{HarrixQtLibraryForLaTeX v.1.30}
+\title{HarrixQtLibraryForLaTeX v.1.31}
 \author{А.\,Б. Сергиенко}
 \date{\today}
 
@@ -39,7 +39,6 @@
 Сайт автора, где публикуются последние новости: \href{http://blog.harrix.org/}{http://blog.harrix.org/}, а проекты располагаются по адресу \href{http://harrix.org/}{http://harrix.org/}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ВСТАВЛЯТЬ НИЖЕ
-
 \newpage
 \section{Список функций}\label{section_listfunctions}
 \textbf{Главные загрузочные функции}
@@ -92,6 +91,8 @@
 \item \textbf{\hyperref[HQt_LatexGreenText]{HQt\_LatexGreenText}} --- Функция возвращает строку с выводом зеленого текста.
 
 \item \textbf{\hyperref[HQt_LatexRedText]{HQt\_LatexRedText}} --- Функция возвращает строку с выводом красного текста.
+
+\item \textbf{\hyperref[HQt_TextForLatexToText]{HQt\_TextForLatexToText}} --- Функция обрабатывает строку String из переделки функции HQt\_TextToTextForLatex в нормальную строку. Еще удаляются знаки \$, которые обрамляют формулы.
 
 \item \textbf{\hyperref[HQt_TextToTextForLatex]{HQt\_TextToTextForLatex}} --- Функция переводит текст в текст, который можно добавить в Latex код. В-первую очередь, это экранирование некоторых элементов.
 
@@ -885,6 +886,24 @@ String --- непосредственно выводимая строка.
 Строка с Latex кодами с красным текстом.
 
 
+\subsubsection{HQt\_TextForLatexToText}\label{HQt_TextForLatexToText}
+
+Функция обрабатывает строку String из переделки функции HQt\_TextToTextForLatex в нормальную строку. Еще удаляются знаки \$, которые обрамляют формулы.
+
+
+\begin{lstlisting}[label=code_syntax_HQt_TextForLatexToText,caption=Синтаксис]
+QString HQt_TextForLatexToText (QString String);
+\end{lstlisting}
+
+\textbf{Входные параметры:}
+
+String --- обрабатываемая строка.
+
+\textbf{Возвращаемое значение:}
+ 
+Обработанная строка.
+
+
 \subsubsection{HQt\_TextToTextForLatex}\label{HQt_TextToTextForLatex}
 
 Функция переводит текст в текст, который можно добавить в Latex код. В-первую очередь, это экранирование некоторых элементов.
@@ -935,17 +954,16 @@ template <class T> QString THQt_LatexShowMatrix (T *VMHL_Matrix, int VMHL_N, int
 \end{lstlisting}
 
 \textbf{Входные параметры:}
- 
 
 VMHL\_Matrix --- указатель на выводимую матрицу;
  
-    VMHL\_N --- количество строк в матрице;
+VMHL\_N --- количество строк в матрице;
  
-    VMHL\_M --- количество столбцов в матрице;
+VMHL\_M --- количество столбцов в матрице;
  
-    TitleMatrix --- заголовок выводимой матрицы;
+TitleMatrix --- заголовок выводимой матрицы;
  
-    NameMatrix --- обозначение матрицы.
+NameMatrix --- обозначение матрицы.
 	
 \textbf{Возвращаемое значение:}
 
@@ -1308,11 +1326,11 @@ template <class T> QString THQt_LatexShowNumber (T VMHL_X);
 
 \textbf{Входные параметры:}
  
-    VMHL\_X --- выводимое число;
+VMHL\_X --- выводимое число;
  
-    TitleX --- заголовок выводимого числа;
+TitleX --- заголовок выводимого числа;
  
-    NameX --- обозначение числа.
+NameX --- обозначение числа.
 
 \textbf{Возвращаемое значение:}
 
