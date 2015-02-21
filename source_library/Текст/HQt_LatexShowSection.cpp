@@ -7,9 +7,9 @@ QString HQt_LatexShowSection (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\section{"+String+"}\n\n";
+    VHQt_Result="\n\n\\section{"+String+"}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

@@ -13,9 +13,9 @@ QString HQt_ForcedWordWrap(QString S)
 
     List = HQt_CutToWordsWithWordWrap(S);
 
-    QString VMHL_Result = List.join("\\-");
+    QString VHQt_Result = List.join("\\-");
 
-    VMHL_Result = VMHL_Result.replace("\\-\\\\-_", "\\_");
+    VHQt_Result = VHQt_Result.replace("\\-\\\\-_", "\\_");
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

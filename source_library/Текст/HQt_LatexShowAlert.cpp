@@ -7,9 +7,9 @@ QString HQt_LatexShowAlert (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимым предупреждением.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+    VHQt_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

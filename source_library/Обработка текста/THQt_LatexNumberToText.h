@@ -1,1 +1,1 @@
-template <class T> QString THQt_LatexNumberToText (T VMHL_X);
+template <class T> QString THQt_LatexNumberToText (T VHQt_X);

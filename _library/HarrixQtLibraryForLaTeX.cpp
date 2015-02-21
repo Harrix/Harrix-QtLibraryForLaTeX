@@ -1,5 +1,5 @@
 //HarrixQtLibraryForLaTeX
-//Версия 1.32
+//Версия 1.33
 //Библиотека для отображения различных данных в LaTeX файлах.
 //https://github.com/Harrix/HarrixQtLibraryForLaTeX
 //Библиотека распространяется по лицензии Apache License, Version 2.0.
@@ -14,14 +14,14 @@ QString HQt_LatexBegin()
     /*
      Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate.
      */
-    QString VMHL_Result;
-    VMHL_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
-    VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
-    VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
-    VMHL_Result+="\\begin{document}\n\n";
-    VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
+    QString VHQt_Result;
+    VHQt_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
+    VHQt_Result+="\\input{packages} %Подключаем модуль пакетов\n";
+    VHQt_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VHQt_Result+="\\begin{document}\n\n";
+    VHQt_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -30,14 +30,14 @@ QString HQt_LatexBeginArticle()
     /*
      Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate.
      */
-    QString VMHL_Result;
-    VMHL_Result+="\\documentclass[a4paper,12pt]{article}\n\n";
-    VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
-    VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
-    VMHL_Result+="\\begin{document}\n\n";
-    VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
+    QString VHQt_Result;
+    VHQt_Result+="\\documentclass[a4paper,12pt]{article}\n\n";
+    VHQt_Result+="\\input{packages} %Подключаем модуль пакетов\n";
+    VHQt_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VHQt_Result+="\\begin{document}\n\n";
+    VHQt_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -47,16 +47,16 @@ QString HQt_LatexBeginArticleWithPgfplots()
      Возвращает начало для полноценного Latex файла в виде статьи для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
      с использованием графиков через пакет pgfplots.
      */
-    QString VMHL_Result;
-    VMHL_Result+="\\documentclass[a4paper,12pt]{article}\n\n";
-    VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
-    VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
-    VMHL_Result+="\\usepgfplotslibrary{external}\n";
-    VMHL_Result+="\\tikzexternalize[prefix=TikzPictures/]\n\n";
-    VMHL_Result+="\\begin{document}\n\n";
-    VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
+    QString VHQt_Result;
+    VHQt_Result+="\\documentclass[a4paper,12pt]{article}\n\n";
+    VHQt_Result+="\\input{packages} %Подключаем модуль пакетов\n";
+    VHQt_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VHQt_Result+="\\usepgfplotslibrary{external}\n";
+    VHQt_Result+="\\tikzexternalize[prefix=TikzPictures/]\n\n";
+    VHQt_Result+="\\begin{document}\n\n";
+    VHQt_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -66,16 +66,16 @@ QString HQt_LatexBeginWithPgfplots()
      Возвращает начало для полноценного Latex файла для шаблона https://github.com/Harrix/HarrixLaTeXDocumentTemplate
      с использованием графиков через пакет pgfplots.
      */
-    QString VMHL_Result;
-    VMHL_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
-    VMHL_Result+="\\input{packages} %Подключаем модуль пакетов\n";
-    VMHL_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
-    VMHL_Result+="\\usepgfplotslibrary{external}\n";
-    VMHL_Result+="\\tikzexternalize[prefix=TikzPictures/]\n\n";
-    VMHL_Result+="\\begin{document}\n\n";
-    VMHL_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
+    QString VHQt_Result;
+    VHQt_Result+="\\documentclass[a4paper,12pt]{report}\n\n";
+    VHQt_Result+="\\input{packages} %Подключаем модуль пакетов\n";
+    VHQt_Result+="\\input{styles} %Подключаем модуль стилей\n\n";
+    VHQt_Result+="\\usepgfplotslibrary{external}\n";
+    VHQt_Result+="\\tikzexternalize[prefix=TikzPictures/]\n\n";
+    VHQt_Result+="\\begin{document}\n\n";
+    VHQt_Result+="\\input{names} %Подключаем модуль переименования некоторых команд\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
     int N=(Right-Left)/h;
     double *dataX=new double [N];
@@ -128,12 +128,12 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
         x+=h;
     }
 
-    VMHL_Result += THQt_LatexShowChartOfLine (dataX, dataY, N, TitleChart, NameVectorX, NameVectorY, NameLine, "Chart"+HQt_RandomString(8), ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine, true);
+    VHQt_Result += THQt_LatexShowChartOfLine (dataX, dataY, N, TitleChart, NameVectorX, NameVectorY, NameLine, "Chart"+HQt_RandomString(8), ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine, true);
 
     delete []dataX;
     delete []dataY;
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine)
@@ -157,11 +157,11 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, "", ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, "", ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine)
@@ -181,11 +181,11 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, NameLine, true, false, false, true, true);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, NameLine, true, false, false, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double))
@@ -201,11 +201,11 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, "", "x", "y", true, false, false, true, true);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, "", "x", "y", true, false, false, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -239,7 +239,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double *x=new double [N];
     double *y=new double [N];
@@ -258,14 +258,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
             z[i][j]=Function(x[i],y[j]);
         }
 
-    VMHL_Result = THQt_LatexShow3DPlot (x, y, z,  N,  N, TitleChart,  NameVectorX, NameVectorY, NameVectorZ, Label, ColorMap, Type, Opacity, AngleHorizontal, AngleVertical, ColorBar,  ForNormalSize);
+    VHQt_Result = THQt_LatexShow3DPlot (x, y, z,  N,  N, TitleChart,  NameVectorX, NameVectorY, NameVectorZ, Label, ColorMap, Type, Opacity, AngleHorizontal, AngleVertical, ColorBar,  ForNormalSize);
 
     delete [] x;
     delete [] y;
     for (int i=0;i<N;i++) delete [] z[i];
     delete [] z;
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar, bool ForNormalSize)
@@ -296,7 +296,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -306,9 +306,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, ForNormalSize);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, ForNormalSize);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar)
@@ -338,7 +338,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -348,9 +348,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type)
@@ -379,7 +379,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -389,9 +389,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label)
@@ -414,14 +414,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double))
@@ -439,14 +439,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double))
@@ -462,14 +462,14 @@ QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left, Right, Left, Right, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left, Right, Left, Right, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -492,11 +492,11 @@ QString HQt_ForcedWordWrap(QString S)
 
     List = HQt_CutToWordsWithWordWrap(S);
 
-    QString VMHL_Result = List.join("\\-");
+    QString VHQt_Result = List.join("\\-");
 
-    VMHL_Result = VMHL_Result.replace("\\-\\\\-_", "\\_");
+    VHQt_Result = VHQt_Result.replace("\\-\\\\-_", "\\_");
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -509,11 +509,11 @@ QString HQt_LatexGreenText (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с зеленым текстом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\\textcolor{darkgreen}{\\textbf{"+String+"}}";
+    VHQt_Result="\\textcolor{darkgreen}{\\textbf{"+String+"}}";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -526,11 +526,11 @@ QString HQt_LatexRedText (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с красным текстом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\\textcolor{red}{\\textbf{"+String+"}}";
+    VHQt_Result="\\textcolor{red}{\\textbf{"+String+"}}";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -544,11 +544,11 @@ QString HQt_TextForLatexToText (QString String)
     Возвращаемое значение:
      Обработанная строка.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result=String.replace("\\_","_").replace("$","").replace("$\\sim$","~").replace("\\#","#");
+    VHQt_Result=String.replace("\\_","_").replace("$","").replace("$\\sim$","~").replace("\\#","#");
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -573,227 +573,227 @@ QString HQt_TextToTextForLatex (QString Text)
 //*****************************************************************
 //Показ математических выражений
 //*****************************************************************
-QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString TitleMatrix, QString NameMatrix)
+QString THQt_LatexShowMatrix (QStringList *VHQt_Matrix, int VHQt_N, QString TitleMatrix, QString NameMatrix)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+    Функция возвращает строку с выводом некоторой матрицы VHQt_Matrix с Latex кодами.
     В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
     Каждый QStringList - это одна строка.
     Входные параметры:
-     VMHL_Matrix - указатель на выводимую матрицу;
-     VMHL_N - количество строк в матрице;
+     VHQt_Matrix - указатель на выводимую матрицу;
+     VHQt_N - количество строк в матрице;
      TitleMatrix - заголовок выводимой матрицы;
      NameMatrix - обозначение матрицы.
     Возвращаемое значение:
      Строка с Latex кодами с выводимой матрицей.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n"+TitleMatrix+":\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{"+NameMatrix+"} = ";
+    VHQt_Result="\n\n"+TitleMatrix+":\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{"+NameMatrix+"} = ";
 
     QString C;
-    for (int j=0;j<VMHL_Matrix[0].count();j++) C+="c";
-    VMHL_Result+="\\left( \\begin{array}{"+C+"} ";
+    for (int j=0;j<VHQt_Matrix[0].count();j++) C+="c";
+    VHQt_Result+="\\left( \\begin{array}{"+C+"} ";
 
-    for (int i=0;i<VMHL_N;i++)
+    for (int i=0;i<VHQt_N;i++)
     {
         QString H;
 
-        for (int j=0;j<VMHL_Matrix[i].count();j++)
+        for (int j=0;j<VHQt_Matrix[i].count();j++)
         {
-            if (j!=VMHL_Matrix[i].count()-1) H=" & "; else H="";
-            VMHL_Result+="\\text{"+VMHL_Matrix[i].at(j)+"}"+H;
+            if (j!=VHQt_Matrix[i].count()-1) H=" & "; else H="";
+            VHQt_Result+="\\text{"+VHQt_Matrix[i].at(j)+"}"+H;
         }
 
-        if (i!=VMHL_N-1) H="\\\\"; else H="";
-        VMHL_Result+=H;
+        if (i!=VHQt_N-1) H="\\\\"; else H="";
+        VHQt_Result+=H;
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N, QString NameMatrix)
+QString THQt_LatexShowMatrix (QStringList *VHQt_Matrix, int VHQt_N, QString NameMatrix)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+    Функция возвращает строку с выводом некоторой матрицы VHQt_Matrix с Latex кодами.
     В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
     Каждый QStringList - это одна строка.
     Входные параметры:
-     VMHL_Matrix - указатель на выводимую матрицу;
-     VMHL_N - количество строк в матрице;
+     VHQt_Matrix - указатель на выводимую матрицу;
+     VHQt_N - количество строк в матрице;
      NameMatrix - обозначение матрицы.
     Возвращаемое значение:
      Строка с Latex кодами с выводимой матрицей.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{"+NameMatrix+"} = ";
+    VHQt_Result="\n\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{"+NameMatrix+"} = ";
 
     QString C;
-    for (int j=0;j<VMHL_Matrix[0].count();j++) C+="c";
-    VMHL_Result+="\\left( \\begin{array}{"+C+"} ";
+    for (int j=0;j<VHQt_Matrix[0].count();j++) C+="c";
+    VHQt_Result+="\\left( \\begin{array}{"+C+"} ";
 
-    for (int i=0;i<VMHL_N;i++)
+    for (int i=0;i<VHQt_N;i++)
     {
         QString H;
 
-        for (int j=0;j<VMHL_Matrix[i].count();j++)
+        for (int j=0;j<VHQt_Matrix[i].count();j++)
         {
-            if (j!=VMHL_Matrix[i].count()-1) H=" & "; else H="";
-            VMHL_Result+="\\text{"+VMHL_Matrix[i].at(j)+"}"+H;
+            if (j!=VHQt_Matrix[i].count()-1) H=" & "; else H="";
+            VHQt_Result+="\\text{"+VHQt_Matrix[i].at(j)+"}"+H;
         }
 
-        if (i!=VMHL_N-1) H="\\\\"; else H="";
-        VMHL_Result+=H;
+        if (i!=VHQt_N-1) H="\\\\"; else H="";
+        VHQt_Result+=H;
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-QString THQt_LatexShowMatrix (QStringList *VMHL_Matrix, int VMHL_N)
+QString THQt_LatexShowMatrix (QStringList *VHQt_Matrix, int VHQt_N)
 {
     /*
-    Функция возвращает строку с выводом некоторой матрицы VMHL_Matrix с Latex кодами.
+    Функция возвращает строку с выводом некоторой матрицы VHQt_Matrix с Latex кодами.
     В качестве матрицы выступает массив QStringList, где количество QStringList - это количество строк.
     Каждый QStringList - это одна строка.
     Входные параметры:
-     VMHL_Matrix - указатель на выводимую матрицу;
-     VMHL_N - количество строк в матрице.
+     VHQt_Matrix - указатель на выводимую матрицу;
+     VHQt_N - количество строк в матрице.
     Возвращаемое значение:
      Строка с Latex кодами с выводимой матрицей.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{x} = ";
+    VHQt_Result="\n\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{x} = ";
 
     QString C;
-    for (int j=0;j<VMHL_Matrix[0].count();j++) C+="c";
-    VMHL_Result+="\\left( \\begin{array}{"+C+"} ";
+    for (int j=0;j<VHQt_Matrix[0].count();j++) C+="c";
+    VHQt_Result+="\\left( \\begin{array}{"+C+"} ";
 
-    for (int i=0;i<VMHL_N;i++)
+    for (int i=0;i<VHQt_N;i++)
     {
         QString H;
 
-        for (int j=0;j<VMHL_Matrix[i].count();j++)
+        for (int j=0;j<VHQt_Matrix[i].count();j++)
         {
-            if (j!=VMHL_Matrix[i].count()-1) H=" & "; else H="";
-            VMHL_Result+="\\text{"+VMHL_Matrix[i].at(j)+"}"+H;
+            if (j!=VHQt_Matrix[i].count()-1) H=" & "; else H="";
+            VHQt_Result+="\\text{"+VHQt_Matrix[i].at(j)+"}"+H;
         }
 
-        if (i!=VMHL_N-1) H="\\\\"; else H="";
-        VMHL_Result+=H;
+        if (i!=VHQt_N-1) H="\\\\"; else H="";
+        VHQt_Result+=H;
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
-QString THQt_LatexShowVector (QStringList VMHL_Vector, QString TitleVector, QString NameVector)
+QString THQt_LatexShowVector (QStringList VHQt_Vector, QString TitleVector, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+    Функция возвращает строку с выводом некоторого вектора VHQt_Vector с Latex кодами.
     Входные параметры:
-     VMHL_Vector - указатель на выводимый вектор;
+     VHQt_Vector - указатель на выводимый вектор;
      TitleVector - заголовок выводимого вектора;
      NameVector - обозначение вектора.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым вектором.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n"+TitleVector+":\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{"+NameVector+"} = ";
+    VHQt_Result="\n\n"+TitleVector+":\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{"+NameVector+"} = ";
 
-    VMHL_Result+="\\left( \\begin{array}{c} ";
+    VHQt_Result+="\\left( \\begin{array}{c} ";
 
-    for (int i=0;i<VMHL_Vector.count();i++)
+    for (int i=0;i<VHQt_Vector.count();i++)
     {
-        VMHL_Result+="\\text{"+(VMHL_Vector.at(i))+"}\\\\";
+        VHQt_Result+="\\text{"+(VHQt_Vector.at(i))+"}\\\\";
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-QString THQt_LatexShowVector (QStringList VMHL_Vector, QString NameVector)
+QString THQt_LatexShowVector (QStringList VHQt_Vector, QString NameVector)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+    Функция возвращает строку с выводом некоторого вектора VHQt_Vector с Latex кодами.
     Входные параметры:
-     VMHL_Vector - указатель на выводимый вектор;
+     VHQt_Vector - указатель на выводимый вектор;
      NameVector - обозначение вектора.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым вектором.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{"+NameVector+"} = ";
+    VHQt_Result="\n\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{"+NameVector+"} = ";
 
-    VMHL_Result+="\\left( \\begin{array}{c} ";
+    VHQt_Result+="\\left( \\begin{array}{c} ";
 
-    for (int i=0;i<VMHL_Vector.count();i++)
+    for (int i=0;i<VHQt_Vector.count();i++)
     {
-        VMHL_Result+="\\text{"+(VMHL_Vector.at(i))+"}\\\\";
+        VHQt_Result+="\\text{"+(VHQt_Vector.at(i))+"}\\\\";
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-QString THQt_LatexShowVector (QStringList VMHL_Vector)
+QString THQt_LatexShowVector (QStringList VHQt_Vector)
 {
     /*
-    Функция возвращает строку с выводом некоторого вектора VMHL_Vector с Latex кодами.
+    Функция возвращает строку с выводом некоторого вектора VHQt_Vector с Latex кодами.
     Входные параметры:
-     VMHL_Vector - указатель на выводимый вектор.
+     VHQt_Vector - указатель на выводимый вектор.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым вектором.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+="\\overline{x} = ";
+    VHQt_Result="\n\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+="\\overline{x} = ";
 
-    VMHL_Result+="\\left( \\begin{array}{c} ";
+    VHQt_Result+="\\left( \\begin{array}{c} ";
 
-    for (int i=0;i<VMHL_Vector.count();i++)
+    for (int i=0;i<VHQt_Vector.count();i++)
     {
-        VMHL_Result+="\\text{"+(VMHL_Vector.at(i))+"}\\\\";
+        VHQt_Result+="\\text{"+(VHQt_Vector.at(i))+"}\\\\";
     }
 
-    VMHL_Result+="\\end{array}\\right).\n";
+    VHQt_Result+="\\end{array}\\right).\n";
 
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -819,11 +819,11 @@ QString HQt_LatexBeginCompositionFigure ()
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\begin{figure}[H]\n\\centering\n";
+    VHQt_Result="\n\\begin{figure}[H]\n\\centering\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -845,11 +845,11 @@ QString HQt_LatexBeginFigureInCompositionFigure ()
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\\begin{subfigure}[t]{0.48\\textwidth}\n\\centering\n";
+    VHQt_Result="\\begin{subfigure}[t]{0.48\\textwidth}\n\\centering\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -872,11 +872,11 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label)
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\caption{"+TitleFigure+"}\\label{"+Label+"}\\end{figure}\n\n";
+    VHQt_Result="\n\\caption{"+TitleFigure+"}\\label{"+Label+"}\\end{figure}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexEndCompositionFigure (QString TitleFigure)
@@ -899,11 +899,11 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure)
     */
     QString Label="CompositionFigure"+HQt_RandomString(5);
 
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+    VHQt_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexEndCompositionFigure ()
@@ -928,11 +928,11 @@ QString HQt_LatexEndCompositionFigure ()
 
     QString TitleFigure="Система";
 
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+    VHQt_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -954,11 +954,11 @@ QString HQt_LatexEndFigureInCompositionFigure ()
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\end{subfigure}\n";
+    VHQt_Result="\n\\end{subfigure}\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -980,32 +980,32 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1
     Возвращаемое значение:
      Строка с Latex кодами с выводимой таблицы.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\\begin{center}\n";
-    VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
+    VHQt_Result+="\\begin{center}\n";
+    VHQt_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
     double width1 = (WidthCol1/100.);
     double width2 = (1.-WidthCol1/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|}\n";
-    VMHL_Result+="\\caption{"+Title+"}\n";
+    VHQt_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|}\n";
+    VHQt_Result+="\\caption{"+Title+"}\n";
 
-    VMHL_Result+="\\tabularnewline\\hline\n";
-    VMHL_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} \\centering \\tabularnewline \\hline \\endhead\n";
-    VMHL_Result+="\\multicolumn{2}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
-    VMHL_Result+="\\endlastfoot\n";
+    VHQt_Result+="\\tabularnewline\\hline\n";
+    VHQt_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} \\centering \\tabularnewline \\hline \\endhead\n";
+    VHQt_Result+="\\multicolumn{2}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
+    VHQt_Result+="\\endlastfoot\n";
 
     for (int i=0;i<Col1.count();i++)
     {
-        VMHL_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" \\tabularnewline \\hline\n";
+        VHQt_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" \\tabularnewline \\hline\n";
     }
 
-    VMHL_Result+="\\end{longtable}\n";
-    VMHL_Result+="}\n";
-    VMHL_Result+="\\end{center}\n\n";
+    VHQt_Result+="\\end{longtable}\n";
+    VHQt_Result+="}\n";
+    VHQt_Result+="\\end{center}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3, QString NameCol1, QString NameCol2, QString NameCol3, double WidthCol1, double WidthCol2, QString Title)
@@ -1025,33 +1025,33 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3
     Возвращаемое значение:
      Строка с Latex кодами с выводимой таблицы.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\\begin{center}\n";
-    VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
+    VHQt_Result+="\\begin{center}\n";
+    VHQt_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
     double width1 = (WidthCol1/100.);
     double width2 = (WidthCol2/100.);
     double width3 = (1.-WidthCol1/100.-WidthCol2/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width3)+"\\linewidth-2\\tabcolsep}|}\n";
-    VMHL_Result+="\\caption{"+Title+"}\n";
+    VHQt_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width3)+"\\linewidth-2\\tabcolsep}|}\n";
+    VHQt_Result+="\\caption{"+Title+"}\n";
 
-    VMHL_Result+="\\tabularnewline\\hline\n";
-    VMHL_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} & \\centering \\textbf{"+NameCol3+"} \\centering \\tabularnewline \\hline \\endhead\n";
-    VMHL_Result+="\\multicolumn{3}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
-    VMHL_Result+="\\endlastfoot\n";
+    VHQt_Result+="\\tabularnewline\\hline\n";
+    VHQt_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} & \\centering \\textbf{"+NameCol3+"} \\centering \\tabularnewline \\hline \\endhead\n";
+    VHQt_Result+="\\multicolumn{3}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
+    VHQt_Result+="\\endlastfoot\n";
 
     for (int i=0;i<Col1.count();i++)
     {
-        VMHL_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" & \\footnotesize "+Col3.at(i)+" \\tabularnewline \\hline\n";
+        VHQt_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" & \\footnotesize "+Col3.at(i)+" \\tabularnewline \\hline\n";
     }
 
-    VMHL_Result+="\\end{longtable}\n";
-    VMHL_Result+="}\n";
-    VMHL_Result+="\\end{center}\n\n";
+    VHQt_Result+="\\end{longtable}\n";
+    VHQt_Result+="}\n";
+    VHQt_Result+="\\end{center}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1068,11 +1068,11 @@ QString HQt_LatexShowAlert (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимым предупреждением.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
+    VHQt_Result="\n\n\\textcolor{red}{\\textbf{"+String+"}}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1085,11 +1085,11 @@ QString HQt_LatexShowHr ()
     Возвращаемое значение:
      Строка с Latex кодами с тэгом горизонтальной линии.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\hrulefill\n\n";
+    VHQt_Result="\n\n\\hrulefill\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1102,11 +1102,11 @@ QString HQt_LatexShowSection (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\section{"+String+"}\n\n";
+    VHQt_Result="\n\n\\section{"+String+"}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1119,11 +1119,11 @@ QString HQt_LatexShowSimpleText (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n"+String+"\n\n";
+    VHQt_Result="\n\n"+String+"\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1136,11 +1136,11 @@ QString HQt_LatexShowSubsection (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\subsection{"+String+"}\n\n";
+    VHQt_Result="\n\n\\subsection{"+String+"}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 
@@ -1153,10 +1153,10 @@ QString HQt_LatexShowText (QString TitleX)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой (в виде абзаца).
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\textbf{"+TitleX+".}\n\n";
+    VHQt_Result="\n\n\\textbf{"+TitleX+".}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------

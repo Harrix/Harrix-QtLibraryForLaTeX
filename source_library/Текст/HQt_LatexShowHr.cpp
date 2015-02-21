@@ -7,9 +7,9 @@ QString HQt_LatexShowHr ()
     Возвращаемое значение:
      Строка с Latex кодами с тэгом горизонтальной линии.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\hrulefill\n\n";
+    VHQt_Result="\n\n\\hrulefill\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

@@ -7,9 +7,9 @@ QString HQt_LatexRedText (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с красным текстом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\\textcolor{red}{\\textbf{"+String+"}}";
+    VHQt_Result="\\textcolor{red}{\\textbf{"+String+"}}";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

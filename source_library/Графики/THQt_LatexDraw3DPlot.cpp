@@ -28,7 +28,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double *x=new double [N];
     double *y=new double [N];
@@ -47,14 +47,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
             z[i][j]=Function(x[i],y[j]);
         }
 
-    VMHL_Result = THQt_LatexShow3DPlot (x, y, z,  N,  N, TitleChart,  NameVectorX, NameVectorY, NameVectorZ, Label, ColorMap, Type, Opacity, AngleHorizontal, AngleVertical, ColorBar,  ForNormalSize);
+    VHQt_Result = THQt_LatexShow3DPlot (x, y, z,  N,  N, TitleChart,  NameVectorX, NameVectorY, NameVectorZ, Label, ColorMap, Type, Opacity, AngleHorizontal, AngleVertical, ColorBar,  ForNormalSize);
 
     delete [] x;
     delete [] y;
     for (int i=0;i<N;i++) delete [] z[i];
     delete [] z;
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar, bool ForNormalSize)
@@ -85,7 +85,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -95,9 +95,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, ForNormalSize);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, ForNormalSize);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type, bool ColorBar)
@@ -127,7 +127,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -137,9 +137,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, ColorBar, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label, QString ColorMap, TypeOf3DPlot Type)
@@ -168,7 +168,7 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
@@ -178,9 +178,9 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
        AngleVerticalNew=0;
     }
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, ColorMap, Type, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double),  QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameVectorZ, QString Label)
@@ -203,14 +203,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  TitleChart, NameVectorX,  NameVectorY, NameVectorZ, Label, "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, double Right_Y, int N, double (*Function)(double, double))
@@ -228,14 +228,14 @@ QString THQt_LatexDraw3DPlot (double Left_X, double Right_X, double Left_Y, doub
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left_X, Right_X, Left_Y, Right_Y, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Function)(double, double))
@@ -251,12 +251,12 @@ QString THQt_LatexDraw3DPlot (double Left, double Right, int N, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодами с выводимым графиком.
     */
-    QString VMHL_Result;//переменная итогового результата
+    QString VHQt_Result;//переменная итогового результата
 
     double AngleHorizontalNew=25;
     double AngleVerticalNew=30;
 
-    VMHL_Result = THQt_LatexDraw3DPlot (Left, Right, Left, Right, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
+    VHQt_Result = THQt_LatexDraw3DPlot (Left, Right, Left, Right, N, Function,  "График", "x", "y", "z", "Plot3D"+HQt_RandomString(8), "mathcad", Plot3D_Surface, 1.0, AngleHorizontalNew, AngleVerticalNew, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

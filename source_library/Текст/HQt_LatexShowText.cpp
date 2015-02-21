@@ -7,9 +7,9 @@ QString HQt_LatexShowText (QString TitleX)
     Возвращаемое значение:
      Строка с Latex кодами с выводимой строкой (в виде абзаца).
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n\\textbf{"+TitleX+".}\n\n";
+    VHQt_Result="\n\n\\textbf{"+TitleX+".}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

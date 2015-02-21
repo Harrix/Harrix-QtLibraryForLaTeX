@@ -16,9 +16,9 @@ QString HQt_LatexEndFigureInCompositionFigure ()
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\end{subfigure}\n";
+    VHQt_Result="\n\\end{subfigure}\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

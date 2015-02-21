@@ -19,7 +19,7 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
     int N=(Right-Left)/h;
     double *dataX=new double [N];
@@ -34,12 +34,12 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
         x+=h;
     }
 
-    VMHL_Result += THQt_LatexShowChartOfLine (dataX, dataY, N, TitleChart, NameVectorX, NameVectorY, NameLine, "Chart"+HQt_RandomString(8), ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine, true);
+    VHQt_Result += THQt_LatexShowChartOfLine (dataX, dataY, N, TitleChart, NameVectorX, NameVectorY, NameLine, "Chart"+HQt_RandomString(8), ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine, true);
 
     delete []dataX;
     delete []dataY;
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, bool ShowLine, bool ShowPoints, bool ShowArea, bool ShowSpecPoints, bool RedLine)
@@ -63,11 +63,11 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, "", ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, "", ShowLine, ShowPoints, ShowArea, ShowSpecPoints, RedLine);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double), QString TitleChart, QString NameVectorX, QString NameVectorY, QString NameLine)
@@ -87,11 +87,11 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, NameLine, true, false, false, true, true);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, TitleChart, NameVectorX, NameVectorY, NameLine, true, false, false, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Function)(double))
@@ -107,9 +107,9 @@ QString HQt_LatexDrawLine (double Left, double Right, double h, double (*Functio
     Возвращаемое значение:
      Строка с Latex кодом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result += HQt_LatexDrawLine (Left, Right, h, Function, "", "x", "y", true, false, false, true, true);
+    VHQt_Result += HQt_LatexDrawLine (Left, Right, h, Function, "", "x", "y", true, false, false, true, true);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

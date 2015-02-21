@@ -7,9 +7,9 @@ QString HQt_LatexGreenText (QString String)
     Возвращаемое значение:
      Строка с Latex кодами с зеленым текстом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\\textcolor{darkgreen}{\\textbf{"+String+"}}";
+    VHQt_Result="\\textcolor{darkgreen}{\\textbf{"+String+"}}";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

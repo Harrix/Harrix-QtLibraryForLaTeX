@@ -1,5 +1,5 @@
 //HarrixQtLibrary
-//Версия 3.28
+//Версия 3.30
 //Сборник функций для Qt.
 //https://github.com/Harrix/HarrixQtLibrary
 //Библиотека распространяется по лицензии Apache License, Version 2.0.

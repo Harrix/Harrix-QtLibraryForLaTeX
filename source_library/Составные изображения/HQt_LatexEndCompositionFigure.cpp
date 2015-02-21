@@ -17,11 +17,11 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure, QString Label)
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\caption{"+TitleFigure+"}\\label{"+Label+"}\\end{figure}\n\n";
+    VHQt_Result="\n\\caption{"+TitleFigure+"}\\label{"+Label+"}\\end{figure}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexEndCompositionFigure (QString TitleFigure)
@@ -44,11 +44,11 @@ QString HQt_LatexEndCompositionFigure (QString TitleFigure)
     */
     QString Label="CompositionFigure"+HQt_RandomString(5);
 
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+    VHQt_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexEndCompositionFigure ()
@@ -73,9 +73,9 @@ QString HQt_LatexEndCompositionFigure ()
 
     QString TitleFigure="Система";
 
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
+    VHQt_Result=HQt_LatexEndCompositionFigure (TitleFigure, Label);
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

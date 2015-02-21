@@ -1,3 +1,3 @@
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX);
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX);
-template <class T> QString THQt_LatexShowNumber (T VMHL_X);
+template <class T> QString THQt_LatexShowNumber (T VHQt_X, QString TitleX, QString NameX);
+template <class T> QString THQt_LatexShowNumber (T VHQt_X, QString NameX);
+template <class T> QString THQt_LatexShowNumber (T VHQt_X);

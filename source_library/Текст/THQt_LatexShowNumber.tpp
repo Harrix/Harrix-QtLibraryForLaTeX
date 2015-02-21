@@ -1,57 +1,57 @@
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString TitleX, QString NameX)
+template <class T> QString THQt_LatexShowNumber (T VHQt_X, QString TitleX, QString NameX)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+    Функция возвращает строку с выводом некоторого числа VHQt_X с Latex кодами.
     Входные параметры:
-     VMHL_X - выводимое число;
+     VHQt_X - выводимое число;
      TitleX - заголовок выводимого числа;
      NameX - обозначение числа.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым числом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\n"+TitleX+":\n";
-    VMHL_Result+="\\begin{equation}\n";
-    VMHL_Result+=NameX+" = " + QString::number(VMHL_X) + ".\n";
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result="\n\n"+TitleX+":\n";
+    VHQt_Result+="\\begin{equation}\n";
+    VHQt_Result+=NameX+" = " + QString::number(VHQt_X) + ".\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-template <class T> QString THQt_LatexShowNumber (T VMHL_X, QString NameX)
+template <class T> QString THQt_LatexShowNumber (T VHQt_X, QString NameX)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+    Функция возвращает строку с выводом некоторого числа VHQt_X с Latex кодами.
     Входные параметры:
-     VMHL_X - выводимое число;
+     VHQt_X - выводимое число;
      NameX - обозначение числа.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым числом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\n\n\\begin{equation}\n";
-    VMHL_Result+=NameX+" = " + QString::number(VMHL_X) + ".\n";
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\n\n\\begin{equation}\n";
+    VHQt_Result+=NameX+" = " + QString::number(VHQt_X) + ".\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
-template <class T> QString THQt_LatexShowNumber (T VMHL_X)
+template <class T> QString THQt_LatexShowNumber (T VHQt_X)
 {
     /*
-    Функция возвращает строку с выводом некоторого числа VMHL_X с Latex кодами.
+    Функция возвращает строку с выводом некоторого числа VHQt_X с Latex кодами.
     Входные параметры:
-     VMHL_X - выводимое число.
+     VHQt_X - выводимое число.
     Возвращаемое значение:
      Строка с Latex кодами с выводимым числом.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\n\n\\begin{equation}\n";
-    VMHL_Result+="x = " + QString::number(VMHL_X) + ".\n";
-    VMHL_Result+="\\end{equation}\n\n";
+    VHQt_Result+="\n\n\\begin{equation}\n";
+    VHQt_Result+="x = " + QString::number(VHQt_X) + ".\n";
+    VHQt_Result+="\\end{equation}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

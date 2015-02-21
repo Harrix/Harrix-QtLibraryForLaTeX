@@ -12,32 +12,32 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QString NameCol1
     Возвращаемое значение:
      Строка с Latex кодами с выводимой таблицы.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\\begin{center}\n";
-    VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
+    VHQt_Result+="\\begin{center}\n";
+    VHQt_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
     double width1 = (WidthCol1/100.);
     double width2 = (1.-WidthCol1/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|}\n";
-    VMHL_Result+="\\caption{"+Title+"}\n";
+    VHQt_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|}\n";
+    VHQt_Result+="\\caption{"+Title+"}\n";
 
-    VMHL_Result+="\\tabularnewline\\hline\n";
-    VMHL_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} \\centering \\tabularnewline \\hline \\endhead\n";
-    VMHL_Result+="\\multicolumn{2}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
-    VMHL_Result+="\\endlastfoot\n";
+    VHQt_Result+="\\tabularnewline\\hline\n";
+    VHQt_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} \\centering \\tabularnewline \\hline \\endhead\n";
+    VHQt_Result+="\\multicolumn{2}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
+    VHQt_Result+="\\endlastfoot\n";
 
     for (int i=0;i<Col1.count();i++)
     {
-        VMHL_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" \\tabularnewline \\hline\n";
+        VHQt_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" \\tabularnewline \\hline\n";
     }
 
-    VMHL_Result+="\\end{longtable}\n";
-    VMHL_Result+="}\n";
-    VMHL_Result+="\\end{center}\n\n";
+    VHQt_Result+="\\end{longtable}\n";
+    VHQt_Result+="}\n";
+    VHQt_Result+="\\end{center}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }
 //---------------------------------------------------------------------------
 QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3, QString NameCol1, QString NameCol2, QString NameCol3, double WidthCol1, double WidthCol2, QString Title)
@@ -57,31 +57,31 @@ QString HQt_LatexShowTable (QStringList Col1, QStringList Col2, QStringList Col3
     Возвращаемое значение:
      Строка с Latex кодами с выводимой таблицы.
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result+="\\begin{center}\n";
-    VMHL_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
+    VHQt_Result+="\\begin{center}\n";
+    VHQt_Result+="{\n\\renewcommand{\\arraystretch}{1.5}\n";
 
     double width1 = (WidthCol1/100.);
     double width2 = (WidthCol2/100.);
     double width3 = (1.-WidthCol1/100.-WidthCol2/100.);
 
-    VMHL_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width3)+"\\linewidth-2\\tabcolsep}|}\n";
-    VMHL_Result+="\\caption{"+Title+"}\n";
+    VHQt_Result+="\\footnotesize\\begin{longtable}[H]{|m{\\dimexpr"+QString::number(width1)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width2)+"\\linewidth-2\\tabcolsep}|m{\\dimexpr"+QString::number(width3)+"\\linewidth-2\\tabcolsep}|}\n";
+    VHQt_Result+="\\caption{"+Title+"}\n";
 
-    VMHL_Result+="\\tabularnewline\\hline\n";
-    VMHL_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} & \\centering \\textbf{"+NameCol3+"} \\centering \\tabularnewline \\hline \\endhead\n";
-    VMHL_Result+="\\multicolumn{3}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
-    VMHL_Result+="\\endlastfoot\n";
+    VHQt_Result+="\\tabularnewline\\hline\n";
+    VHQt_Result+="\\centering \\textbf{"+NameCol1+"} & \\centering \\textbf{"+NameCol2+"} & \\centering \\textbf{"+NameCol3+"} \\centering \\tabularnewline \\hline \\endhead\n";
+    VHQt_Result+="\\multicolumn{3}{|r|}{{Продолжение на следующей странице...}} \\\\ \\hline \\endfoot\n";
+    VHQt_Result+="\\endlastfoot\n";
 
     for (int i=0;i<Col1.count();i++)
     {
-        VMHL_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" & \\footnotesize "+Col3.at(i)+" \\tabularnewline \\hline\n";
+        VHQt_Result+="\\footnotesize "+Col1.at(i)+" & \\footnotesize "+Col2.at(i)+" & \\footnotesize "+Col3.at(i)+" \\tabularnewline \\hline\n";
     }
 
-    VMHL_Result+="\\end{longtable}\n";
-    VMHL_Result+="}\n";
-    VMHL_Result+="\\end{center}\n\n";
+    VHQt_Result+="\\end{longtable}\n";
+    VHQt_Result+="}\n";
+    VHQt_Result+="\\end{center}\n\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

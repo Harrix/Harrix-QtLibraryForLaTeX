@@ -16,9 +16,9 @@ QString HQt_LatexBeginCompositionFigure ()
     Latex += HQt_LatexEndFigureInCompositionFigure ();
     Latex += HQt_LatexEndCompositionFigure ("Два графика", "TwoFig");
     */
-    QString VMHL_Result;
+    QString VHQt_Result;
 
-    VMHL_Result="\n\\begin{figure}[H]\n\\centering\n";
+    VHQt_Result="\n\\begin{figure}[H]\n\\centering\n";
 
-    return VMHL_Result;
+    return VHQt_Result;
 }

@@ -1,6 +1,10 @@
 HarrixQtLibraryForLaTeX
 =======================
 
+1.33
+----
+ * Изменены названия некоторых переменных.
+
 1.32
 ----
  * Исправлены функции HQt_TextToTextForLatex и HQt_TextForLatexToText.
